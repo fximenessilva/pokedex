@@ -42,5 +42,14 @@ module.exports = {
     // not always needed with @testing-libary/react
     // multiple examples of this by library author (https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#using-waitfor-to-wait-for-elements-that-can-be-queried-with-find)
     "jest/expect-expect": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ]
   },
 };
