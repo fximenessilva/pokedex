@@ -1,4 +1,4 @@
-import { About } from './About';
+import { About } from './List';
 import renderWithRouter from '../../testUtils/renderWithRouter';
 
 describe('About', () => {
