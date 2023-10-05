@@ -2,13 +2,12 @@ import { FC } from 'react';
 
 import { Wrapper } from '../utils';
 import { Routes } from '../../routes/Routes';
-
-import '../../styles/app.css';
+import { Header } from '../../components/common/header';
 
 export const App: FC = () => {
   return (
     <Wrapper>
-      <h1>Hello world!</h1>
+      <Header />
       <Routes />
     </Wrapper>
   );

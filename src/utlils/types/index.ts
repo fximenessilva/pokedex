@@ -51,4 +51,8 @@ interface Pokemon {
   weight: number;
 }
 
-export { Pokemons, Pokemon };
+type ComponentWithDarkMode = {
+  $isDarkMode: boolean;
+};
+
+export { Pokemons, Pokemon, ComponentWithDarkMode };

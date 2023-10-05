@@ -14,6 +14,8 @@ interface PokemonContextProps {
   loading: boolean;
   error: string | null;
   dispatch: React.Dispatch<Action>;
+  getPokemons: () => Promise<void>;
+  getPokemon: (name: string) => Promise<void>;
 }
 
 const PokemonContext = createContext<PokemonContextProps | undefined>(
@@ -56,7 +58,13 @@ export const PokemonProvider: React.FC = ({ children }) => {
     loading: true,
     error: null,
     dispatch: () => {
-      // Placeholder comment or nothing at all
+      // Placeholder comment
+    },
+    getPokemons: async () => {
+      // Placeholder comment
+    },
+    getPokemon: async (name) => {
+      // Placeholder comment
     },
   };
 
@@ -78,7 +86,7 @@ export const PokemonProvider: React.FC = ({ children }) => {
     }
   };
 
-  const fetchPokemon = async (name: string) => {
+  const getPokemon = async (name: string) => {
     try {
       const { status, data } = await fetchPokemonDetail(name);
       if (status !== 200) {
@@ -92,7 +100,9 @@ export const PokemonProvider: React.FC = ({ children }) => {
   };
 
   return (
-    <PokemonContext.Provider value={{ ...state, dispatch }}>
+    <PokemonContext.Provider
+      value={{ ...state, dispatch, getPokemons, getPokemon }}
+    >
       {children}
     </PokemonContext.Provider>
   );

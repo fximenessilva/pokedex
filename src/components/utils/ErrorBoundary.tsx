@@ -32,7 +32,7 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
 
   return hasError ? (
     <div>
-      <div className='center-error-div'>
+      <div>
         <h2>Oops, there is an error!</h2>
         <button type='button' onClick={handleButtonClick}>
           Back to homepage

@@ -38,7 +38,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.2",

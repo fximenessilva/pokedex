@@ -1,10 +1,11 @@
 import React, { createContext, useReducer, useContext, Dispatch } from 'react';
+import styled from 'styled-components';
 
 type State = {
   isDarkMode: boolean;
 };
 
-type Action = { type: 'DARK_MODE'; payload: any };
+type Action = { type: 'SET_DARK_MODE'; payload: boolean };
 
 const initialState: State = {
   isDarkMode: false,
@@ -21,7 +22,7 @@ const AppContext = createContext<
 
 const appReducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case 'DARK_MODE':
+    case 'SET_DARK_MODE':
       return { ...state, isDarkMode: action.payload };
     default:
       return state;
@@ -32,7 +33,7 @@ export const AppProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   const toggleDarkMode = (payload: any) => {
-    dispatch({ type: 'DARK_MODE', payload });
+    dispatch({ type: 'SET_DARK_MODE', payload });
   };
 
   return (
