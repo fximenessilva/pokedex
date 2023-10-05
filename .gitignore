@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Distribution directory
+dist/
+
+# TypeScript build output
+*.tsbuildinfo
+
+# Webpack build artifacts
+/build/
+
+# Jest coverage directory
+coverage/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.swp
+
+# Jest cache
+.jest/
