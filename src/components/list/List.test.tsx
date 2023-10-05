@@ -1,8 +1,8 @@
-import { About } from './About';
+import { List } from './List';
 import renderWithRouter from '../../testUtils/renderWithRouter';
 
-describe('About', () => {
+describe('List', () => {
   it('should render', () => {
-    renderWithRouter(<About />);
+    renderWithRouter(<List />);
   });
 });
