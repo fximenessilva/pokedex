@@ -7,7 +7,7 @@ const CenteredWrapper = styled.div<ComponentWithDarkMode>`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  // min-height: 100vh;
   width: calc(100% - 4rem);
   padding: 2rem;
   // background-color: ${(props) =>

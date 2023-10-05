@@ -10,7 +10,7 @@ import { COLORS } from '../../utlils/constants';
 
 const GlobalStyle = createGlobalStyle<ComponentWithDarkMode>`
   body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', sans-serif;
     background-color: ${(props) =>
       props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray};
     color: ${(props) =>

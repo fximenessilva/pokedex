@@ -5,8 +5,10 @@ const API_ENDPOINTS = {
   pokemon_detail: (name: string) => `${BASE_URL}/pokemon/${name}`,
 } as const;
 
-const IMAGES_URL = (name: string) =>
-  `https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`;
+const IMAGES_URL = (name: string | undefined) => {
+  if (!name) return;
+  return `https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`;
+};
 
 const LOGO_URL =
   'https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg';
@@ -34,6 +36,12 @@ const COLORS = {
   green: '#4CAF50',
 } as const;
 
+const ROUTES = {
+  homepage: '/',
+  pokemons_list: '/pokemons',
+  pokemon_detail: '/pokemon/:pokemonId',
+} as const;
+
 export {
   API_ENDPOINTS,
   BASE_URL,
@@ -42,4 +50,5 @@ export {
   BREAKPOINTS,
   NAMESPACES,
   COLORS,
+  ROUTES,
 };
