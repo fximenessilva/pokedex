@@ -16,6 +16,30 @@ const BREAKPOINTS = {
   medium: '768px',
   large: '992px',
   xlarge: '1200px',
-};
+} as const;
 
-export { API_ENDPOINTS, BASE_URL, IMAGES_URL, LOGO_URL, BREAKPOINTS };
+const NAMESPACES = {
+  theme: 'pokedex-theme-dark',
+} as const;
+
+const COLORS = {
+  yellow: '#FFD700',
+  light_gray: '#F5F5F5',
+  lighter_gray: '#E0E0E0',
+  medium_gray: '#CCCCCC',
+  dark_gray: '#888888',
+  darker_gray: '#666666',
+  darkest_gray: '#333333',
+  black: '#000000',
+  green: '#4CAF50',
+} as const;
+
+export {
+  API_ENDPOINTS,
+  BASE_URL,
+  IMAGES_URL,
+  LOGO_URL,
+  BREAKPOINTS,
+  NAMESPACES,
+  COLORS,
+};

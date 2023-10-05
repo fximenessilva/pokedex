@@ -1,4 +1,4 @@
-import { useReducer, ChangeEvent } from 'react';
+import { createContext, useContext, useReducer, ChangeEvent } from 'react';
 
 interface FilterState {
   searchTerm: string;
@@ -37,16 +37,32 @@ const filterInitialState = {
   searchTerm: '',
 };
 
-export function useFilterState(): UseFilterState {
+const FilterContext = createContext<UseFilterState | undefined>(undefined);
+
+export function FilterProvider({ children }: { children: React.ReactNode }) {
   const [filterState, dispatch] = useReducer(filterReducer, filterInitialState);
 
-  const setSearchTerm = (event: ChangeEvent) => {
-    const inputValue = (event.target as HTMLInputElement).value;
+  const setSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
     dispatch({ type: 'SET_SEARCHTERM', payload: inputValue });
   };
 
   const setFiltersToInitial = () =>
     dispatch({ type: 'SET_FILTERS_TO_INITIAL' });
 
-  return { filterState, setSearchTerm };
+  const contextValue = { filterState, setSearchTerm };
+
+  return (
+    <FilterContext.Provider value={contextValue}>
+      {children}
+    </FilterContext.Provider>
+  );
+}
+
+export function useFilterState() {
+  const context = useContext(FilterContext);
+  if (context === undefined) {
+    throw new Error('useFilterState must be used within a FilterProvider');
+  }
+  return context;
 }

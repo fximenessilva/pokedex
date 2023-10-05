@@ -1,5 +1,13 @@
-import React, { createContext, useReducer, useContext, Dispatch } from 'react';
-import styled from 'styled-components';
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  Dispatch,
+  useEffect,
+} from 'react';
+
+import { NAMESPACES } from '../utlils/constants';
+import { getter, setter } from '../utlils/localStorageHelpers';
 
 type State = {
   isDarkMode: boolean;
@@ -7,8 +15,10 @@ type State = {
 
 type Action = { type: 'SET_DARK_MODE'; payload: boolean };
 
+const THEME_SELECTED = getter(NAMESPACES.theme);
+
 const initialState: State = {
-  isDarkMode: false,
+  isDarkMode: THEME_SELECTED || false,
 };
 
 const AppContext = createContext<
@@ -32,8 +42,15 @@ const appReducer = (state: State, action: Action): State => {
 export const AppProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
+  useEffect(() => {
+    if (!THEME_SELECTED) {
+      setter(NAMESPACES.theme, state.isDarkMode);
+    }
+  }, []);
+
   const toggleDarkMode = (payload: any) => {
     dispatch({ type: 'SET_DARK_MODE', payload });
+    setter(NAMESPACES.theme, payload);
   };
 
   return (

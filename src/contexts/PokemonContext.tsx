@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import React, { createContext, useContext, useMemo, useReducer } from 'react';
 
 import { fetchPokemons, fetchPokemonDetail } from '../services/api';
 import { Pokemons, Pokemon } from '../utlils/types';
+import { useFilterState } from './FilterProvider';
 
 type Action =
   | { type: 'SET_POKEMONS'; payload: Pokemons[] }
@@ -51,6 +52,14 @@ const pokemonReducer = (
   }
 };
 
+const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
+  if (searchTerm === '') {
+    return pokemon;
+  } else {
+    return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
+  }
+};
+
 export const PokemonProvider: React.FC = ({ children }) => {
   const initialState: PokemonContextProps = {
     pokemons: [],
@@ -69,6 +78,10 @@ export const PokemonProvider: React.FC = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(pokemonReducer, initialState);
+
+  const {
+    filterState: { searchTerm },
+  } = useFilterState();
 
   const getPokemons = async () => {
     try {
@@ -98,10 +111,25 @@ export const PokemonProvider: React.FC = ({ children }) => {
       dispatch({ type: 'SET_ERROR', payload: error });
     }
   };
+  const filteredPokemons = useMemo(
+    () =>
+      state.pokemons.filter((pokemon) =>
+        filterByKeyCallback(pokemon, searchTerm)
+      ),
+    [state.pokemons, searchTerm]
+  );
 
   return (
     <PokemonContext.Provider
-      value={{ ...state, dispatch, getPokemons, getPokemon }}
+      value={{
+        pokemons: filteredPokemons,
+        pokemon: state.pokemon,
+        loading: state.loading,
+        error: state.error,
+        dispatch,
+        getPokemons,
+        getPokemon,
+      }}
     >
       {children}
     </PokemonContext.Provider>

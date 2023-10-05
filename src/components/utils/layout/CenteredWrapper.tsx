@@ -10,7 +10,8 @@ const CenteredWrapper = styled.div<ComponentWithDarkMode>`
   min-height: 100vh;
   width: calc(100% - 4rem);
   padding: 2rem;
-  background-color: ${(props) => (props.$isDarkMode ? '#424B54' : '#E5ECF3')};
+  // background-color: ${(props) =>
+    props.$isDarkMode ? '#424B54' : '#E5ECF3'};
 `;
 
 export default CenteredWrapper;

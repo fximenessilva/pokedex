@@ -10,7 +10,7 @@ const calculateColumnWidth = (columns: number) => {
 const GridContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
+  margin: 120px -15px 0;
 `;
 
 export const GridItem = styled.div<{ $columns: number }>`
