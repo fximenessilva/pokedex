@@ -7,7 +7,8 @@ import { useFilterState } from './FilterProvider';
 type Action =
   | { type: 'SET_POKEMONS'; payload: Pokemons[] }
   | { type: 'SET_POKEMON'; payload: Pokemon }
-  | { type: 'SET_ERROR'; payload: any };
+  | { type: 'SET_ERROR'; payload: any }
+  | { type: 'SET_LOADING'; payload: boolean };
 
 interface PokemonContextProps {
   pokemons: Pokemons[] | [];
@@ -45,6 +46,12 @@ const pokemonReducer = (
         ...state,
         error: action.payload,
         loading: false,
+      };
+
+    case 'SET_LOADING':
+      return {
+        ...state,
+        loading: action.payload,
       };
 
     default:
@@ -92,7 +99,6 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
   const getPokemons = async () => {
     try {
       const response = await fetchPokemons();
-
       dispatch({ type: 'SET_POKEMONS', payload: response.results });
     } catch (error) {
       dispatch({ type: 'SET_ERROR', payload: error });
@@ -101,9 +107,8 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
 
   const getPokemon = async (name: string) => {
     try {
-      const { status, data } = await fetchPokemonDetail(name);
-
-      dispatch({ type: 'SET_POKEMON', payload: data });
+      const response = await fetchPokemonDetail(name);
+      dispatch({ type: 'SET_POKEMON', payload: response });
     } catch (error) {
       dispatch({ type: 'SET_ERROR', payload: error });
     }

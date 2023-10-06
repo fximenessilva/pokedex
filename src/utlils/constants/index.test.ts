@@ -39,6 +39,7 @@ describe('Constants', () => {
   });
 
   it('should have the correct BREAKPOINTS', () => {
+    expect(BREAKPOINTS.xsmall).toBe('360px');
     expect(BREAKPOINTS.small).toBe('576px');
     expect(BREAKPOINTS.medium).toBe('768px');
     expect(BREAKPOINTS.large).toBe('992px');

@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../utlils/constants';
+import { COLORS, BREAKPOINTS } from '../../../utlils/constants';
 
 interface SearchBarProps {
   value: string;
@@ -14,6 +14,15 @@ const StyledInput = styled.input`
   border-radius: 0.5rem;
   outline: none;
   min-width: 240px;
+
+  @media (max-width: ${BREAKPOINTS.small}) {
+    min-width: 200px;
+    max-width: 220px;
+  }
+  @media (max-width: ${BREAKPOINTS.xsmall}) {
+    min-width: 100px;
+    max-width: 160px;
+  }
 `;
 
 const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, ...props }) => {

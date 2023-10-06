@@ -14,6 +14,7 @@ const LOGO_URL =
   'https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg';
 
 const BREAKPOINTS = {
+  xsmall: '360px',
   small: '576px',
   medium: '768px',
   large: '992px',
