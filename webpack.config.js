@@ -21,6 +21,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     port: process.env.PORT || 8080,
+    historyApiFallback: true,
   },
   module: {
     rules: [

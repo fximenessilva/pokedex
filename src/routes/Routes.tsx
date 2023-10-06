@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { NotFound } from '../components/utils';
 
 import { CenteredWrapper } from '../components/utils/layout';
+import { Header } from '../components/common/header';
 import { Home } from '../components/home';
 import { List } from '../components/list/List';
 import { Detail } from '../components/detail/Detail';
@@ -14,6 +15,7 @@ export const Routes: FC = () => {
   return (
     <CenteredWrapper $isDarkMode={state.isDarkMode}>
       <Router>
+        <Header />
         <Switch>
           <Route exact path={ROUTES.homepage} component={Home} />
           <Route exact path={ROUTES.pokemons_list} component={List} />

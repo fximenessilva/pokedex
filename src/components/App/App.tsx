@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import { Wrapper } from '../utils';
 import { Routes } from '../../routes/Routes';
-import { Header } from '../../components/common/header';
 import { useAppContext } from '../../contexts/AppContext';
 import { ComponentWithDarkMode } from '../../utlils/types';
 import { COLORS } from '../../utlils/constants';
@@ -33,7 +32,6 @@ export const App = () => {
   return (
     <>
       <GlobalStyle $isDarkMode={state.isDarkMode} />
-      <Header />
       <Routes />
     </>
   );

@@ -22,7 +22,7 @@ export const List: FC = () => {
         <GridItem key={el.name} $columns={4}>
           <Link to={`/pokemon/${el.name}`}>
             <Card.Root>
-              <Card.Image src={IMAGES_URL(el.name)} />
+              <Card.Image src={IMAGES_URL(el.name) || ''} />
               <Card.Label name={el.name} />
             </Card.Root>
           </Link>

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useLocation } from 'react-router';
 
 import { useAppContext } from '../../../contexts/AppContext';
 import { useFilterState } from '../../../contexts/FilterProvider';
@@ -47,20 +48,23 @@ const Header = () => {
   const { state, toggleDarkMode } = useAppContext();
   const { filterState, setSearchTerm } = useFilterState();
   const { pokemons } = usePokemonContext();
+  const { pathname } = useLocation();
   const scrollDirection = useScrollDir();
+
+  const isListPage = pathname === ROUTES.pokemons_list;
 
   return (
     <StyledHeader $isDarkMode={state.isDarkMode} $scrollDir={scrollDirection}>
       <Image alt='pokemon logo' src={LOGO_URL} />
-      {true && (
-        <SearchContainer>
-          <ToggleContainer>
-            <ToggleButton
-              onClick={toggleDarkMode}
-              defaultValue={state.isDarkMode}
-            />
-          </ToggleContainer>
+      <SearchContainer>
+        <ToggleContainer>
+          <ToggleButton
+            onClick={toggleDarkMode}
+            defaultValue={state.isDarkMode}
+          />
+        </ToggleContainer>
 
+        {isListPage && (
           <Input.Root>
             <Input.Search
               value={filterState.searchTerm}
@@ -73,8 +77,8 @@ const Header = () => {
               />
             )}
           </Input.Root>
-        </SearchContainer>
-      )}
+        )}
+      </SearchContainer>
     </StyledHeader>
   );
 };
