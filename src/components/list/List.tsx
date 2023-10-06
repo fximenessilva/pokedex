@@ -19,7 +19,15 @@ const List: FC = () => {
   return (
     <Grid>
       {pokemons.map((el) => (
-        <GridItem key={el.name} $columns={4}>
+        <GridItem
+          key={el.name}
+          $xs={12}
+          $sm={6}
+          $md={6}
+          $lg={4}
+          $xl={3}
+          $xxl={2}
+        >
           <Link to={`/pokemon/${el.name}`}>
             <Card.Root>
               <Card.Image src={IMAGES_URL(el.name) || ''} />

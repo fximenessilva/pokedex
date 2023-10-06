@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const StyledLabel = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: gray;
 `;
 
