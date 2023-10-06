@@ -6,26 +6,30 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
     class="sc-beyTiQ bLjOgq"
   >
     <header
-      class="sc-kFCrIq cjmcFn"
+      class="sc-fmKFmJ jwmiNx"
     >
-      <img
-        alt="pokemon logo"
-        class="sc-jsEeA-d bZFbIX"
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-      />
+      <a
+        href="/"
+      >
+        <img
+          alt="pokemon logo"
+          class="sc-hABBGs eDrYbX"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        />
+      </a>
       <div
-        class="sc-irLvoH dFmDvU"
+        class="sc-fHekAb itxTRf"
       >
         <div
-          class="sc-csKJRI cTSyik"
+          class="sc-blmCWO wzgTu"
         >
           <div
-            class="sc-fsYfxw bzoMmF"
+            class="sc-brSaGm gDsUOc"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-qZruQ eyMNia"
+              class="sc-ktwNLz kCgZiU"
               data-testid="slider"
             />
           </div>
@@ -33,18 +37,18 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
       </div>
     </header>
     <div
-      class="sc-eTNxZ ifXclb"
+      class="sc-ifysJV kstVOj"
     >
       <a
         href="/pokemons"
       >
         <h1
-          class="sc-brSaGm kBTyLS"
+          class="sc-dJGLgI fVLMwU"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-ktwNLz llJhsk"
+          class="sc-hIPCWT iyhGDs"
         >
           <iframe
             allowfullscreen=""
@@ -68,26 +72,30 @@ exports[`Routes renders the Pokemon detail page 1`] = `
     class="sc-beyTiQ bLjOgq"
   >
     <header
-      class="sc-kFCrIq cjmcFn"
+      class="sc-fmKFmJ jwmiNx"
     >
-      <img
-        alt="pokemon logo"
-        class="sc-jsEeA-d bZFbIX"
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-      />
+      <a
+        href="/"
+      >
+        <img
+          alt="pokemon logo"
+          class="sc-hABBGs eDrYbX"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        />
+      </a>
       <div
-        class="sc-irLvoH dFmDvU"
+        class="sc-fHekAb itxTRf"
       >
         <div
-          class="sc-csKJRI cTSyik"
+          class="sc-blmCWO wzgTu"
         >
           <div
-            class="sc-fsYfxw bzoMmF"
+            class="sc-brSaGm gDsUOc"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-qZruQ eyMNia"
+              class="sc-ktwNLz kCgZiU"
               data-testid="slider"
             />
           </div>
@@ -95,18 +103,18 @@ exports[`Routes renders the Pokemon detail page 1`] = `
       </div>
     </header>
     <div
-      class="sc-eTNxZ ifXclb"
+      class="sc-ifysJV kstVOj"
     >
       <a
         href="/pokemons"
       >
         <h1
-          class="sc-brSaGm kBTyLS"
+          class="sc-dJGLgI fVLMwU"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-ktwNLz llJhsk"
+          class="sc-hIPCWT iyhGDs"
         >
           <iframe
             allowfullscreen=""
@@ -130,26 +138,30 @@ exports[`Routes renders the Pokemon list page 1`] = `
     class="sc-beyTiQ bLjOgq"
   >
     <header
-      class="sc-kFCrIq cjmcFn"
+      class="sc-fmKFmJ jwmiNx"
     >
-      <img
-        alt="pokemon logo"
-        class="sc-jsEeA-d bZFbIX"
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-      />
+      <a
+        href="/"
+      >
+        <img
+          alt="pokemon logo"
+          class="sc-hABBGs eDrYbX"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        />
+      </a>
       <div
-        class="sc-irLvoH dFmDvU"
+        class="sc-fHekAb itxTRf"
       >
         <div
-          class="sc-csKJRI cTSyik"
+          class="sc-blmCWO wzgTu"
         >
           <div
-            class="sc-fsYfxw bzoMmF"
+            class="sc-brSaGm gDsUOc"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-qZruQ eyMNia"
+              class="sc-ktwNLz kCgZiU"
               data-testid="slider"
             />
           </div>
@@ -157,18 +169,18 @@ exports[`Routes renders the Pokemon list page 1`] = `
       </div>
     </header>
     <div
-      class="sc-eTNxZ ifXclb"
+      class="sc-ifysJV kstVOj"
     >
       <a
         href="/pokemons"
       >
         <h1
-          class="sc-brSaGm kBTyLS"
+          class="sc-dJGLgI fVLMwU"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-ktwNLz llJhsk"
+          class="sc-hIPCWT iyhGDs"
         >
           <iframe
             allowfullscreen=""
@@ -192,26 +204,30 @@ exports[`Routes renders the home page 1`] = `
     class="sc-beyTiQ bLjOgq"
   >
     <header
-      class="sc-kFCrIq cjmcFn"
+      class="sc-fmKFmJ jwmiNx"
     >
-      <img
-        alt="pokemon logo"
-        class="sc-jsEeA-d bZFbIX"
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-      />
+      <a
+        href="/"
+      >
+        <img
+          alt="pokemon logo"
+          class="sc-hABBGs eDrYbX"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        />
+      </a>
       <div
-        class="sc-irLvoH dFmDvU"
+        class="sc-fHekAb itxTRf"
       >
         <div
-          class="sc-csKJRI cTSyik"
+          class="sc-blmCWO wzgTu"
         >
           <div
-            class="sc-fsYfxw bzoMmF"
+            class="sc-brSaGm gDsUOc"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-qZruQ eyMNia"
+              class="sc-ktwNLz kCgZiU"
               data-testid="slider"
             />
           </div>
@@ -219,18 +235,18 @@ exports[`Routes renders the home page 1`] = `
       </div>
     </header>
     <div
-      class="sc-eTNxZ ifXclb"
+      class="sc-ifysJV kstVOj"
     >
       <a
         href="/pokemons"
       >
         <h1
-          class="sc-brSaGm kBTyLS"
+          class="sc-dJGLgI fVLMwU"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-ktwNLz llJhsk"
+          class="sc-hIPCWT iyhGDs"
         >
           <iframe
             allowfullscreen=""

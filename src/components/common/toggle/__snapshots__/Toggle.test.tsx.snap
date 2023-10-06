@@ -7,7 +7,7 @@ exports[`ToggleButton renders correctly with the default active state 1`] = `
   id="toggle-button"
 >
   <div
-    class="sc-guDMob etweyG"
+    class="sc-guDMob eNKguM"
     data-testid="slider"
   />
 </div>
@@ -20,7 +20,7 @@ exports[`ToggleButton renders correctly with the default inactive state 1`] = `
   id="toggle-button"
 >
   <div
-    class="sc-guDMob lmCXWR"
+    class="sc-guDMob bKbxMq"
     data-testid="slider"
   />
 </div>
