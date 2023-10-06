@@ -49,6 +49,64 @@ describe('PokemonProvider', () => {
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
   });
+  it('handles error when fetching the list of pokemons', async () => {
+    const { result, waitForNextUpdate } = renderHook(
+      () => usePokemonContext(),
+      {
+        wrapper: ({ children }) => (
+          <FilterProvider>
+            <PokemonProvider>{children}</PokemonProvider>
+          </FilterProvider>
+        ),
+      }
+    );
+
+    jest
+      .spyOn(api, 'fetchPokemons')
+      .mockRejectedValue(new Error('Failed to fetch'));
+
+    act(() => {
+      result.current.getPokemons();
+    });
+
+    await waitForNextUpdate();
+
+    expect(result.current.error).toEqual(new Error('Failed to fetch'));
+    expect(result.current.loading).toBe(false);
+  });
+
+  it('handles error when fetching the details of a specific pokemon', async () => {
+    const { result, waitForNextUpdate } = renderHook(
+      () => usePokemonContext(),
+      {
+        wrapper: ({ children }) => (
+          <FilterProvider>
+            <PokemonProvider>{children}</PokemonProvider>
+          </FilterProvider>
+        ),
+      }
+    );
+
+    jest
+      .spyOn(api, 'fetchPokemonDetail')
+      .mockRejectedValue(new Error('Failed to fetch'));
+
+    act(() => {
+      result.current.getPokemon('pikachu');
+    });
+
+    await waitForNextUpdate();
+
+    expect(result.current.error).toEqual(new Error('Failed to fetch'));
+    expect(result.current.loading).toBe(false);
+  });
+  it('throws an error when used outside of PokemonProvider', () => {
+    const { result } = renderHook(() => usePokemonContext());
+
+    expect(result.error).toEqual(
+      new Error('usePokemonContext must be used within a PokemonProvider')
+    );
+  });
 });
 
 describe('usePokemonContext', () => {
