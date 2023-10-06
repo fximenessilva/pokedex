@@ -52,7 +52,7 @@ interface Pokemon {
 }
 
 type ComponentWithDarkMode = {
-  $isDarkMode: boolean;
+  $isDarkMode?: boolean;
 };
 
 export { Pokemons, Pokemon, ComponentWithDarkMode };

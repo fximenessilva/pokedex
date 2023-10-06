@@ -71,7 +71,8 @@ interface PokemonProviderProps {
   children: React.ReactNode;
   value?: any;
 }
-const initialState: PokemonContextProps = {
+
+export const initialState: PokemonContextProps = {
   pokemons: [],
   pokemon: null,
   loading: true,

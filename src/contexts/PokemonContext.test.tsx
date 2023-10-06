@@ -7,11 +7,20 @@ import {
   PokemonContextProps,
   Action,
   filterByKeyCallback,
+  initialState,
 } from './PokemonContext'; // Replace with the actual import path
 import { FilterProvider } from './FilterProvider'; // Make sure to import FilterProvider as well
 import '@testing-library/jest-dom/extend-expect';
 import { renderHook } from '@testing-library/react-hooks';
 import { Pokemons, Pokemon } from '../utlils/types';
+import * as api from '../services/api';
+import { fetchPokemons, fetchPokemonDetail } from '../services/api';
+
+jest.mock('../services/api', () => ({
+  ...jest.requireActual('../services/api'), // Keep the original functions
+  fetchPokemons: jest.fn(),
+  fetchPokemonDetail: jest.fn(),
+}));
 
 describe('PokemonProvider', () => {
   it('renders children and initializes state', () => {
@@ -242,5 +251,17 @@ describe('filterByKeyCallback', () => {
     const result = filterByKeyCallback(pokemon as Pokemons, searchTerm);
 
     expect(result).toBe(false);
+  });
+});
+
+describe('initialState', () => {
+  it('should have the correct initial values', () => {
+    expect(initialState.pokemons).toEqual([]);
+    expect(initialState.pokemon).toBeNull();
+    expect(initialState.loading).toBe(true);
+    expect(initialState.error).toBeNull();
+    expect(typeof initialState.dispatch).toBe('function');
+    expect(typeof initialState.getPokemons).toBe('function');
+    expect(typeof initialState.getPokemon).toBe('function');
   });
 });

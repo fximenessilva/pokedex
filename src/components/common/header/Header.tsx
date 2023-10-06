@@ -18,7 +18,7 @@ import { ToggleButton } from '../toggle';
 import useScrollDir from '../../../hooks/useScrollDir';
 import { ScrollProgressBar } from '../../utils/layout';
 
-export const topTop = (props: StyledHeaderProps) =>
+export const toTop = (props: StyledHeaderProps) =>
   props.$scrollDir === 'down' ? '-180px' : '0';
 
 export const renderBackground = (props: ComponentWithDarkMode) =>
@@ -39,7 +39,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   padding: 1.75rem 2rem;
   background-color: ${renderBackground};
   position: fixed;
-  top: ${topTop};
+  top: ${toTop};
   transition: 0.3s;
   width: calc(100% - 4rem);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -93,7 +93,7 @@ const Header = () => {
           </ToggleContainer>
 
           {isListPage && (
-            <Input.Root>
+            <Input.Root data-testid='input-root'>
               <Input.Search
                 value={filterState.searchTerm}
                 onChange={setSearchTerm}
@@ -108,7 +108,12 @@ const Header = () => {
           )}
         </SearchContainer>
       </StyledHeader>
-      {isListPage && <ScrollProgressBar isDarkMode={state.isDarkMode} />}
+      {isListPage && (
+        <ScrollProgressBar
+          data-testid='scroll-progress-bar'
+          isDarkMode={state.isDarkMode}
+        />
+      )}
     </>
   );
 };

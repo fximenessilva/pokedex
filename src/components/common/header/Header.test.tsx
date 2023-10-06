@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { AppProvider } from '../../../contexts/AppContext';
 import { FilterProvider } from '../../../contexts/FilterProvider';
 import { PokemonProvider } from '../../../contexts/PokemonContext';
-import Header from './Header';
+import Header, { toTop } from './Header';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('react-router-dom', () => ({
@@ -32,5 +32,53 @@ describe('Header', () => {
 
     expect(screen.getByAltText('pokemon logo')).toBeInTheDocument();
     expect(screen.getByTestId('toggle-button')).toBeInTheDocument();
+  });
+
+  it('renders correctly for a different route', () => {
+    jest.spyOn(require('react-router-dom'), 'useLocation').mockReturnValueOnce({
+      pathname: '/other_route',
+    });
+
+    render(
+      <MemoryRouter>
+        <AppProvider>
+          <FilterProvider>
+            <PokemonProvider>
+              <Header />
+            </PokemonProvider>
+          </FilterProvider>
+        </AppProvider>
+      </MemoryRouter>
+    );
+  });
+  it('does not render Input.Root when the route is "/fake"', () => {
+    render(
+      <MemoryRouter>
+        <AppProvider>
+          <FilterProvider>
+            <PokemonProvider>
+              <Header />
+            </PokemonProvider>
+          </FilterProvider>
+        </AppProvider>
+      </MemoryRouter>
+    );
+
+    const inputRoot = screen.queryByTestId('input-root'); // Change 'data-testid' as needed
+
+    // Assert that Input.Root is not present in the DOM.
+    expect(inputRoot).not.toBeInTheDocument();
+  });
+});
+
+describe('toTop function', () => {
+  it('should return "-180px" when scroll direction is "down"', () => {
+    const result = toTop({ $scrollDir: 'down' });
+    expect(result).toBe('-180px');
+  });
+
+  it('should return "0" when scroll direction is not "down"', () => {
+    const result = toTop({ $scrollDir: 'up' });
+    expect(result).toBe('0');
   });
 });
