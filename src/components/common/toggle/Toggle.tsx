@@ -11,7 +11,8 @@ const ToggleButtonWrapper = styled.div`
 const Slider = styled.div<{ $isActive: boolean }>`
   width: 30px;
   height: 14px;
-  background-color: ${(props) => (props.$isActive ? '#ccc' : '#ccc')};
+  background-color: ${(props) =>
+    props.$isActive ? COLORS.green : COLORS.medium_gray};
   border-radius: 25px;
   position: relative;
 

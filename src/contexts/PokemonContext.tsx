@@ -4,12 +4,13 @@ import { fetchPokemons, fetchPokemonDetail } from '../services/api';
 import { Pokemons, Pokemon } from '../utlils/types';
 import { useFilterState } from './FilterProvider';
 
-type Action =
+export type Action =
   | { type: 'SET_POKEMONS'; payload: Pokemons[] }
   | { type: 'SET_POKEMON'; payload: Pokemon }
-  | { type: 'SET_ERROR'; payload: any };
+  | { type: 'SET_ERROR'; payload: any }
+  | { type: 'SET_LOADING'; payload: boolean };
 
-interface PokemonContextProps {
+export interface PokemonContextProps {
   pokemons: Pokemons[] | [];
   pokemon: Pokemon | null;
   loading: boolean;
@@ -23,7 +24,7 @@ const PokemonContext = createContext<PokemonContextProps | undefined>(
   undefined
 );
 
-const pokemonReducer = (
+export const pokemonReducer = (
   state: PokemonContextProps,
   action: Action
 ): PokemonContextProps => {
@@ -47,18 +48,25 @@ const pokemonReducer = (
         loading: false,
       };
 
+    case 'SET_LOADING':
+      return {
+        ...state,
+        loading: action.payload,
+      };
+
     default:
       return state;
   }
 };
 
-const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
+export const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
   if (searchTerm === '') {
     return pokemon;
   } else {
     return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
   }
 };
+
 interface PokemonProviderProps {
   children: React.ReactNode;
   value?: any;
@@ -92,7 +100,6 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
   const getPokemons = async () => {
     try {
       const response = await fetchPokemons();
-
       dispatch({ type: 'SET_POKEMONS', payload: response.results });
     } catch (error) {
       dispatch({ type: 'SET_ERROR', payload: error });
@@ -101,9 +108,8 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
 
   const getPokemon = async (name: string) => {
     try {
-      const { status, data } = await fetchPokemonDetail(name);
-
-      dispatch({ type: 'SET_POKEMON', payload: data });
+      const response = await fetchPokemonDetail(name);
+      dispatch({ type: 'SET_POKEMON', payload: response });
     } catch (error) {
       dispatch({ type: 'SET_ERROR', payload: error });
     }

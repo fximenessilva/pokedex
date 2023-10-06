@@ -9,6 +9,7 @@ const centeredPosition = css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0.9;
 `;
 
 const Container = styled.div`

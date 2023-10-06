@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppProvider } from '../contexts/AppContext';
 import { FilterProvider } from '../contexts/FilterProvider';
 import { PokemonProvider } from '../contexts/PokemonContext';
-import { Routes } from './Routes';
+import { RoutesWrapper } from './Routes';
 import '@testing-library/jest-dom/extend-expect';
 
 const MainWrapper = () => (
@@ -13,7 +13,7 @@ const MainWrapper = () => (
       <AppProvider initialState={{ isDarkMode: false }}>
         <FilterProvider>
           <PokemonProvider>
-            <Routes />
+            <RoutesWrapper />
           </PokemonProvider>
         </FilterProvider>
       </AppProvider>

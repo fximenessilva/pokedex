@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { App, AppWrapper } from './App';
+import { App, AppWrapper, renderBackground, renderColor } from './App';
 import { AppProvider, useAppContext } from '../../contexts/AppContext';
 import { FilterProvider } from '../../contexts/FilterProvider';
 import { PokemonProvider } from '../../contexts/PokemonContext';
@@ -63,8 +63,6 @@ describe('AppWrapper', () => {
     expect(state.isDarkMode).toBe(false);
   });
 
-  // Renders the PokemonProvider component
-
   it('should render PokemonProvider component', () => {
     const { container } = render(
       <AppProvider>
@@ -80,7 +78,60 @@ describe('AppWrapper', () => {
       </AppProvider>
     );
 
-    // Check that the PokemonProvider component or its contents are in the rendered output
     expect(container).toBeInTheDocument();
+  });
+
+  it('should switch dark mode in AppProvider', async () => {
+    const { result } = renderHook(() => useAppContext(), {
+      wrapper: AppProvider,
+    });
+
+    const { toggleDarkMode, state } = result.current;
+
+    expect(state.isDarkMode).toBe(false);
+
+    // Toggle dark mode to true (async operation)
+    await act(async () => {
+      toggleDarkMode(true);
+    });
+
+    // Check the state after the toggle operation is complete
+    expect(result.current.state.isDarkMode).toBe(true);
+
+    // Toggle dark mode back to false (async operation)
+    await act(async () => {
+      toggleDarkMode(false);
+    });
+
+    // Check the state again after the toggle operation is complete
+    expect(result.current.state.isDarkMode).toBe(false);
+  });
+});
+
+describe('renderBackground', () => {
+  it('should return darkest_gray when isDarkMode is true', () => {
+    const props = { $isDarkMode: true };
+    const result = renderBackground(props);
+    expect(result).toBe(COLORS.darkest_gray);
+  });
+
+  it('should return light_gray when isDarkMode is false', () => {
+    const props = { $isDarkMode: false };
+    const result = renderBackground(props);
+    expect(result).toBe(COLORS.light_gray);
+  });
+});
+
+describe('renderColor', () => {
+  it('should return light_gray when isDarkMode is true', () => {
+    const props = { $isDarkMode: true };
+    const result = renderColor(props);
+    expect(result).toBe(COLORS.light_gray);
+  });
+
+  it('should return darkest_gray when isDarkMode is false', () => {
+    const props = { $isDarkMode: false };
+    const result = renderColor(props);
+    expect(result).toBe(COLORS.darkest_gray);
   });
 });

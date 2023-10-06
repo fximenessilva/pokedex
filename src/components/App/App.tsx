@@ -2,18 +2,22 @@ import React, { FC } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import { Wrapper } from '../utils';
-import { Routes } from '../../routes/Routes';
+import { RoutesWrapper } from '../../routes/Routes';
 import { useAppContext } from '../../contexts/AppContext';
 import { ComponentWithDarkMode } from '../../utlils/types';
 import { COLORS } from '../../utlils/constants';
 
+export const renderBackground = (props: ComponentWithDarkMode) =>
+  props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray;
+
+export const renderColor = (props: ComponentWithDarkMode) =>
+  props.$isDarkMode ? COLORS.light_gray : COLORS.darkest_gray;
+
 const GlobalStyle = createGlobalStyle<ComponentWithDarkMode>`
   body {
     font-family: 'Press Start 2P', sans-serif;
-    background-color: ${(props) =>
-      props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray};
-    color: ${(props) =>
-      props.$isDarkMode ? COLORS.light_gray : COLORS.darkest_gray};
+    background-color: ${renderBackground};
+    color: ${renderColor};
   }
   a {
     text-decoration: none;
@@ -33,7 +37,7 @@ export const App = () => {
   return (
     <>
       <GlobalStyle $isDarkMode={state.isDarkMode} />
-      <Routes data-testid='routes' />
+      <RoutesWrapper data-testid='routes' />
     </>
   );
 };

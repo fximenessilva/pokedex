@@ -36,7 +36,7 @@ const AppContext = createContext<
   | undefined
 >(undefined);
 
-const appReducer = (state: State, action: Action): State => {
+export const appReducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'SET_DARK_MODE':
       return { ...state, isDarkMode: action.payload };

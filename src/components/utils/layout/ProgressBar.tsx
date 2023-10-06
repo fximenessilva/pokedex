@@ -15,15 +15,15 @@ const ProgressBarContainer = styled.div<{ $isDarkMode: boolean }>`
 `;
 
 interface ProgressBarProps {
-  scrollPercentage: number;
-  isDarkMode: boolean;
+  $scrollPercentage: number;
+  $isDarkMode: boolean;
 }
 
 const ProgressBar = styled.div<ProgressBarProps>`
-  width: ${(props) => props.scrollPercentage}%;
+  width: ${(props) => props.$scrollPercentage}%;
   height: 100%;
   background-color: ${(props) =>
-    props.isDarkMode ? COLORS.yellow : COLORS.blue};
+    props.$isDarkMode ? COLORS.yellow : COLORS.blue};
   transition: width 0.3s ease;
   border-radius: 50px;
 `;
@@ -56,8 +56,9 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({ isDarkMode }) => {
   return (
     <ProgressBarContainer $isDarkMode={isDarkMode}>
       <ProgressBar
-        scrollPercentage={scrollPercentage}
-        isDarkMode={isDarkMode}
+        data-testId='progress-bar'
+        $scrollPercentage={scrollPercentage}
+        $isDarkMode={isDarkMode}
       ></ProgressBar>
     </ProgressBarContainer>
   );

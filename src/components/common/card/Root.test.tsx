@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent, getByTestId } from '@testing-library/react';
-import Root from './Root';
+import Root, { renderBackground } from './Root';
 import { AppProvider, THEME_SELECTED } from '../../../contexts/AppContext';
 import { setter } from '../../../utlils/localStorageHelpers';
-import { NAMESPACES } from '../../../utlils/constants';
+import { NAMESPACES, COLORS } from '../../../utlils/constants';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Root Component', () => {
@@ -36,5 +36,16 @@ describe('Root Component', () => {
     );
 
     expect(setter).not.toHaveBeenCalled();
+  });
+});
+
+describe('renderBackground', () => {
+  it('should return COLORS.medium_gray when $isDarkMode is false', () => {
+    const result = renderBackground({ $isDarkMode: false });
+    expect(result).toEqual(COLORS.medium_gray);
+  });
+  it('should return COLORS.light_gray when $isDarkMode is true', () => {
+    const result = renderBackground({ $isDarkMode: true });
+    expect(result).toEqual(COLORS.light_gray);
   });
 });
