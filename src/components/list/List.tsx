@@ -1,13 +1,13 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { usePokemonContext } from '../../contexts/PokemonContext';
-import { Loading } from '../../components/common/loading';
-import { Card } from '../../components/common/card';
+import { Loading } from '../common/loading';
+import { Card } from '../common/card';
 import { IMAGES_URL } from '../../utlils/constants';
-import { Grid, GridItem } from '../../components/utils/layout';
+import { Grid, GridItem } from '../utils/layout';
 
-export const List: FC = () => {
+const List: FC = () => {
   const { getPokemons, pokemons, loading } = usePokemonContext();
 
   useEffect(() => {
@@ -31,3 +31,5 @@ export const List: FC = () => {
     </Grid>
   );
 };
+
+export default List;

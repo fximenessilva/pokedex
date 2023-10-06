@@ -12,7 +12,7 @@ const StyledImage = styled.img.attrs((props) => ({
 `;
 
 const Image: FC<ImageProps> = ({ src }) => {
-  return <StyledImage src={src} />;
+  return <StyledImage alt='pokemon' src={src} />;
 };
 
 export default Image;

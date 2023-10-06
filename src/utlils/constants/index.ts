@@ -34,6 +34,7 @@ const COLORS = {
   darkest_gray: '#333333',
   black: '#000000',
   green: '#4CAF50',
+  blue: '#003A70',
 } as const;
 
 const ROUTES = {

@@ -5,7 +5,7 @@ import { NotFound } from '../components/utils';
 import { CenteredWrapper } from '../components/utils/layout';
 import { Header } from '../components/common/header';
 import { Home } from '../components/home';
-import { List } from '../components/list/List';
+import List from '../components/list/List';
 import { Detail } from '../components/detail/Detail';
 import { useAppContext } from '../contexts/AppContext';
 import { ROUTES } from '../utlils/constants';

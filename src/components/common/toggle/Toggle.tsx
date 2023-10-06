@@ -11,8 +11,7 @@ const ToggleButtonWrapper = styled.div`
 const Slider = styled.div<{ $isActive: boolean }>`
   width: 30px;
   height: 14px;
-  background-color: ${(props) =>
-    props.$isActive ? COLORS.green : COLORS.medium_gray};
+  background-color: ${(props) => (props.$isActive ? '#ccc' : '#ccc')};
   border-radius: 25px;
   position: relative;
 
@@ -46,8 +45,12 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
   };
 
   return (
-    <ToggleButtonWrapper onClick={toggle}>
-      <Slider $isActive={isActive} />
+    <ToggleButtonWrapper
+      data-testid='toggle-button'
+      id='toggle-button'
+      onClick={toggle}
+    >
+      <Slider data-testid='slider' $isActive={isActive} />
     </ToggleButtonWrapper>
   );
 };

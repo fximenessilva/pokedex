@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import { Wrapper } from '../utils';
@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle<ComponentWithDarkMode>`
     text-decoration: none;
   }
 `;
+
 export const AppWrapper: FC = () => {
   return (
     <Wrapper>
@@ -32,7 +33,7 @@ export const App = () => {
   return (
     <>
       <GlobalStyle $isDarkMode={state.isDarkMode} />
-      <Routes />
+      <Routes data-testid='routes' />
     </>
   );
 };

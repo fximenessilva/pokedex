@@ -10,6 +10,7 @@ import { ComponentWithDarkMode } from '../../../utlils/types';
 import { Input } from '../../common/searchBar';
 import { ToggleButton } from '../toggle';
 import useScrollDir from '../../../hooks/useScrollDir';
+import { ScrollProgressBar } from '../../utils/layout';
 
 interface StyledHeaderProps extends ComponentWithDarkMode {
   $scrollDir?: string | null;
@@ -54,32 +55,35 @@ const Header = () => {
   const isListPage = pathname === ROUTES.pokemons_list;
 
   return (
-    <StyledHeader $isDarkMode={state.isDarkMode} $scrollDir={scrollDirection}>
-      <Image alt='pokemon logo' src={LOGO_URL} />
-      <SearchContainer>
-        <ToggleContainer>
-          <ToggleButton
-            onClick={toggleDarkMode}
-            defaultValue={state.isDarkMode}
-          />
-        </ToggleContainer>
-
-        {isListPage && (
-          <Input.Root>
-            <Input.Search
-              value={filterState.searchTerm}
-              onChange={setSearchTerm}
+    <>
+      <StyledHeader $isDarkMode={state.isDarkMode} $scrollDir={scrollDirection}>
+        <Image alt='pokemon logo' src={LOGO_URL} />
+        <SearchContainer>
+          <ToggleContainer>
+            <ToggleButton
+              onClick={toggleDarkMode}
+              defaultValue={state.isDarkMode}
             />
-            {filterState.searchTerm && (
-              <Input.Label
-                searchTerm={filterState.searchTerm}
-                length={pokemons.length}
+          </ToggleContainer>
+
+          {isListPage && (
+            <Input.Root>
+              <Input.Search
+                value={filterState.searchTerm}
+                onChange={setSearchTerm}
               />
-            )}
-          </Input.Root>
-        )}
-      </SearchContainer>
-    </StyledHeader>
+              {filterState.searchTerm && (
+                <Input.Label
+                  searchTerm={filterState.searchTerm}
+                  length={pokemons.length}
+                />
+              )}
+            </Input.Root>
+          )}
+        </SearchContainer>
+      </StyledHeader>
+      {isListPage && <ScrollProgressBar isDarkMode={state.isDarkMode} />}
+    </>
   );
 };
 

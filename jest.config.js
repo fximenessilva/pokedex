@@ -13,13 +13,16 @@ module.exports = {
   },
   testEnvironment: 'jsdom',
   testRegex: '(/src/.*.(test|spec)).(jsx?|tsx?)$',
-  moduleNameMapper: {
-    // Will need this for tests if you want to use CSS or SCSS
-    // '\\.(scss|css)$': 'identity-obj-proxy',
-  },
+  // moduleNameMapper: {
+  //   // Will need this for tests if you want to use CSS or SCSS
+  //   // '\\.(scss|css)$': 'identity-obj-proxy',
+  // },
   setupFiles: [],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverage: true,
-  coveragePathIgnorePatterns: ['(tests/.*.mock).(jsx?|tsx?)$', '/src/testUtils/'],
+  coveragePathIgnorePatterns: [
+    '(tests/.*.mock).(jsx?|tsx?)$',
+    '/src/testUtils/',
+  ],
   verbose: true,
 };

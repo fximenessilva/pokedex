@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CenteredWrapper renders correctly with dark mode 1`] = `
+<div
+  class="sc-beyTiQ gdHqrM"
+/>
+`;
+
+exports[`CenteredWrapper renders correctly with light mode 1`] = `
+<div
+  class="sc-beyTiQ bLjOgq"
+/>
+`;
