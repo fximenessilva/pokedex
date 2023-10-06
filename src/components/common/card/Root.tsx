@@ -5,6 +5,9 @@ import { useAppContext } from '../../../contexts/AppContext';
 import { ComponentWithDarkMode } from '../../../utlils/types';
 import { COLORS } from '../../../utlils/constants';
 
+export const renderBackground = (props: { $isDarkMode: boolean }) =>
+  props.$isDarkMode ? COLORS.light_gray : COLORS.medium_gray;
+
 const StyledRoot = styled.div<ComponentWithDarkMode>`
   border: 1px solid #ffd700;
   border-radius: 8px;
@@ -31,8 +34,7 @@ const StyledRoot = styled.div<ComponentWithDarkMode>`
   &:hover {
     --_p: 75%;
     filter: grayscale(0%);
-    background-color: ${(props) =>
-      props.$isDarkMode ? COLORS.light_gray : COLORS.medium_gray};
+    background-color: ${renderBackground};
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow on hover */
     transition: all 0.3s ease-in-out; /* Smooth transition for box shadow */
   }

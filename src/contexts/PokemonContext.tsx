@@ -4,13 +4,13 @@ import { fetchPokemons, fetchPokemonDetail } from '../services/api';
 import { Pokemons, Pokemon } from '../utlils/types';
 import { useFilterState } from './FilterProvider';
 
-type Action =
+export type Action =
   | { type: 'SET_POKEMONS'; payload: Pokemons[] }
   | { type: 'SET_POKEMON'; payload: Pokemon }
   | { type: 'SET_ERROR'; payload: any }
   | { type: 'SET_LOADING'; payload: boolean };
 
-interface PokemonContextProps {
+export interface PokemonContextProps {
   pokemons: Pokemons[] | [];
   pokemon: Pokemon | null;
   loading: boolean;
@@ -24,7 +24,7 @@ const PokemonContext = createContext<PokemonContextProps | undefined>(
   undefined
 );
 
-const pokemonReducer = (
+export const pokemonReducer = (
   state: PokemonContextProps,
   action: Action
 ): PokemonContextProps => {
@@ -59,13 +59,14 @@ const pokemonReducer = (
   }
 };
 
-const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
+export const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
   if (searchTerm === '') {
     return pokemon;
   } else {
     return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
   }
 };
+
 interface PokemonProviderProps {
   children: React.ReactNode;
   value?: any;

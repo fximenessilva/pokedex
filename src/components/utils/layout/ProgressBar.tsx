@@ -56,6 +56,7 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({ isDarkMode }) => {
   return (
     <ProgressBarContainer $isDarkMode={isDarkMode}>
       <ProgressBar
+        data-testId='progress-bar'
         $scrollPercentage={scrollPercentage}
         $isDarkMode={isDarkMode}
       ></ProgressBar>

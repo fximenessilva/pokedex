@@ -9,11 +9,11 @@ interface UseFilterState {
   setSearchTerm: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-type FilterAction =
+export type FilterAction =
   | { type: 'SET_SEARCHTERM'; payload: string }
   | { type: 'SET_FILTERS_TO_INITIAL' };
 
-const filterReducer = (
+export const filterReducer = (
   state: FilterState,
   action: FilterAction
 ): FilterState => {
@@ -33,7 +33,7 @@ const filterReducer = (
   }
 };
 
-const filterInitialState = {
+export const filterInitialState = {
   searchTerm: '',
 };
 
@@ -46,9 +46,6 @@ export function FilterProvider({ children }: { children: React.ReactNode }) {
     const inputValue = event.target.value;
     dispatch({ type: 'SET_SEARCHTERM', payload: inputValue });
   };
-
-  const setFiltersToInitial = () =>
-    dispatch({ type: 'SET_FILTERS_TO_INITIAL' });
 
   const contextValue = { filterState, setSearchTerm };
 

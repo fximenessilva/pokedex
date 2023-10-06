@@ -18,6 +18,12 @@ import { ToggleButton } from '../toggle';
 import useScrollDir from '../../../hooks/useScrollDir';
 import { ScrollProgressBar } from '../../utils/layout';
 
+export const topTop = (props: StyledHeaderProps) =>
+  props.$scrollDir === 'down' ? '-180px' : '0';
+
+export const renderBackground = (props: ComponentWithDarkMode) =>
+  props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray;
+
 interface StyledHeaderProps extends ComponentWithDarkMode {
   $scrollDir?: string | null;
 }
@@ -31,10 +37,9 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   display: flex;
   justify-content: space-between;
   padding: 1.75rem 2rem;
-  background-color: ${(props) =>
-    props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray};
+  background-color: ${renderBackground};
   position: fixed;
-  top: ${(props) => (props.$scrollDir === 'down' ? '-180px' : '0')};
+  top: ${topTop};
   transition: 0.3s;
   width: calc(100% - 4rem);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
