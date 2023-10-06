@@ -8,7 +8,21 @@ describe('ScrollProgressBar', () => {
     const { getByTestId } = render(<ScrollProgressBar isDarkMode={false} />);
     const progressBar = getByTestId('progress-bar');
 
-    // Check if the ScrollProgressBar container is rendered
     expect(progressBar).toBeInTheDocument();
+  });
+
+  it('removes the scroll event listener when unmounted', () => {
+    const { unmount } = render(<ScrollProgressBar isDarkMode={false} />);
+
+    const removeEventListenerMock = jest.spyOn(window, 'removeEventListener');
+
+    unmount();
+
+    expect(removeEventListenerMock).toHaveBeenCalledWith(
+      'scroll',
+      expect.any(Function)
+    );
+
+    removeEventListenerMock.mockRestore();
   });
 });

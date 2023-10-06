@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
+import { BREAKPOINTS } from '../../../utlils/constants';
+
 const calculateWidth = (columns: number) => {
   return (columns / 12) * 100;
 };
@@ -10,6 +12,10 @@ const GridContainer = styled.div`
   flex-wrap: wrap;
   margin: 140px -15px 0;
   min-width: calc(100% + 30px);
+
+  @media (max-width: ${BREAKPOINTS.small}) {
+    margin: 200px -15px 0;
+  }
 `;
 
 interface GridItemProps {

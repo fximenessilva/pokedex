@@ -7,11 +7,20 @@ import {
   PokemonContextProps,
   Action,
   filterByKeyCallback,
+  initialState,
 } from './PokemonContext'; // Replace with the actual import path
 import { FilterProvider } from './FilterProvider'; // Make sure to import FilterProvider as well
 import '@testing-library/jest-dom/extend-expect';
 import { renderHook } from '@testing-library/react-hooks';
 import { Pokemons, Pokemon } from '../utlils/types';
+import * as api from '../services/api';
+import { fetchPokemons, fetchPokemonDetail } from '../services/api';
+
+jest.mock('../services/api', () => ({
+  ...jest.requireActual('../services/api'), // Keep the original functions
+  fetchPokemons: jest.fn(),
+  fetchPokemonDetail: jest.fn(),
+}));
 
 describe('PokemonProvider', () => {
   it('renders children and initializes state', () => {
@@ -39,6 +48,64 @@ describe('PokemonProvider', () => {
     expect(result.current.pokemon).toBeNull();
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
+  });
+  it('handles error when fetching the list of pokemons', async () => {
+    const { result, waitForNextUpdate } = renderHook(
+      () => usePokemonContext(),
+      {
+        wrapper: ({ children }) => (
+          <FilterProvider>
+            <PokemonProvider>{children}</PokemonProvider>
+          </FilterProvider>
+        ),
+      }
+    );
+
+    jest
+      .spyOn(api, 'fetchPokemons')
+      .mockRejectedValue(new Error('Failed to fetch'));
+
+    act(() => {
+      result.current.getPokemons();
+    });
+
+    await waitForNextUpdate();
+
+    expect(result.current.error).toEqual(new Error('Failed to fetch'));
+    expect(result.current.loading).toBe(false);
+  });
+
+  it('handles error when fetching the details of a specific pokemon', async () => {
+    const { result, waitForNextUpdate } = renderHook(
+      () => usePokemonContext(),
+      {
+        wrapper: ({ children }) => (
+          <FilterProvider>
+            <PokemonProvider>{children}</PokemonProvider>
+          </FilterProvider>
+        ),
+      }
+    );
+
+    jest
+      .spyOn(api, 'fetchPokemonDetail')
+      .mockRejectedValue(new Error('Failed to fetch'));
+
+    act(() => {
+      result.current.getPokemon('pikachu');
+    });
+
+    await waitForNextUpdate();
+
+    expect(result.current.error).toEqual(new Error('Failed to fetch'));
+    expect(result.current.loading).toBe(false);
+  });
+  it('throws an error when used outside of PokemonProvider', () => {
+    const { result } = renderHook(() => usePokemonContext());
+
+    expect(result.error).toEqual(
+      new Error('usePokemonContext must be used within a PokemonProvider')
+    );
   });
 });
 
@@ -242,5 +309,17 @@ describe('filterByKeyCallback', () => {
     const result = filterByKeyCallback(pokemon as Pokemons, searchTerm);
 
     expect(result).toBe(false);
+  });
+});
+
+describe('initialState', () => {
+  it('should have the correct initial values', () => {
+    expect(initialState.pokemons).toEqual([]);
+    expect(initialState.pokemon).toBeNull();
+    expect(initialState.loading).toBe(true);
+    expect(initialState.error).toBeNull();
+    expect(typeof initialState.dispatch).toBe('function');
+    expect(typeof initialState.getPokemons).toBe('function');
+    expect(typeof initialState.getPokemon).toBe('function');
   });
 });

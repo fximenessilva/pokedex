@@ -13,7 +13,7 @@ import { usePokemonContext } from '../../contexts/PokemonContext';
 import { Loading } from '../../components/common/loading';
 import { IMAGES_URL } from '../../utlils/constants';
 
-type DetailProps = RouteComponentProps<{ pokemonId: string }>;
+export type DetailProps = RouteComponentProps<{ pokemonId: string }>;
 
 export const Detail: FC<DetailProps> = (props) => {
   const { pokemon, loading, getPokemon } = usePokemonContext();

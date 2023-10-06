@@ -12,7 +12,8 @@ module.exports = {
     },
   },
   testEnvironment: 'jsdom',
-  testRegex: '(/src/.*.(test|spec)).(jsx?|tsx?)$',
+  testRegex: '(/src/.*.(test|spec)).(jsx?|tsx?|js|ts)$',
+
   // moduleNameMapper: {
   //   // Will need this for tests if you want to use CSS or SCSS
   //   // '\\.(scss|css)$': 'identity-obj-proxy',
@@ -21,8 +22,17 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverage: true,
   coveragePathIgnorePatterns: [
-    '(tests/.*.mock).(jsx?|tsx?)$',
+    '(tests/.*.mock).(jsx?|tsx?|js|ts)$',
     '/src/testUtils/',
+  ],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/index.tsx',
+    '!src/components/detail/Detail.tsx',
+    '!src/components/utils/ErrorBoundary.tsx',
+    '!src/components/list/List.tsx',
+    '!src/components/list/List.tsx',
+    '!src/components/utils/layout/index.tsx',
   ],
   verbose: true,
 };
