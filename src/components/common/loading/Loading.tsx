@@ -13,7 +13,6 @@ const LoaderWrapper = styled.span<LoaderWrapperProps>`
   display: inline-block;
   position: relative;
 
-  // Use the $isDarkMode transient prop
   &::after,
   &::before {
     content: '';

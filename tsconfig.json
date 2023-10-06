@@ -11,7 +11,8 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": "./src",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest", "node", "@testing-library/react"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "./src/testUtils/**/*"]

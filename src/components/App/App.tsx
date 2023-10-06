@@ -1,9 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import { Wrapper } from '../utils';
 import { Routes } from '../../routes/Routes';
-import { Header } from '../../components/common/header';
 import { useAppContext } from '../../contexts/AppContext';
 import { ComponentWithDarkMode } from '../../utlils/types';
 import { COLORS } from '../../utlils/constants';
@@ -20,6 +19,7 @@ const GlobalStyle = createGlobalStyle<ComponentWithDarkMode>`
     text-decoration: none;
   }
 `;
+
 export const AppWrapper: FC = () => {
   return (
     <Wrapper>
@@ -33,8 +33,7 @@ export const App = () => {
   return (
     <>
       <GlobalStyle $isDarkMode={state.isDarkMode} />
-      <Header />
-      <Routes />
+      <Routes data-testid='routes' />
     </>
   );
 };

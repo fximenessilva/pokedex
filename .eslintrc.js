@@ -31,6 +31,12 @@ module.exports = {
   ignorePatterns: ["**/testUtils/*.tsx"],
   rules: {
     // REACT
+    "@typescript-eslint/no-var-requires": "off", 
+    "react/display-name": "off",
+    "import/no-unresolved": [
+      2, 
+      { "caseSensitive": false }
+   ],
     "react-hooks/exhaustive-deps": "off",
     "react/prop-types": "off",
     // the next two ignore errors about React not being imported

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useLocation } from 'react-router';
 
 import { useAppContext } from '../../../contexts/AppContext';
 import { useFilterState } from '../../../contexts/FilterProvider';
@@ -9,6 +10,7 @@ import { ComponentWithDarkMode } from '../../../utlils/types';
 import { Input } from '../../common/searchBar';
 import { ToggleButton } from '../toggle';
 import useScrollDir from '../../../hooks/useScrollDir';
+import { ScrollProgressBar } from '../../utils/layout';
 
 interface StyledHeaderProps extends ComponentWithDarkMode {
   $scrollDir?: string | null;
@@ -47,12 +49,15 @@ const Header = () => {
   const { state, toggleDarkMode } = useAppContext();
   const { filterState, setSearchTerm } = useFilterState();
   const { pokemons } = usePokemonContext();
+  const { pathname } = useLocation();
   const scrollDirection = useScrollDir();
 
+  const isListPage = pathname === ROUTES.pokemons_list;
+
   return (
-    <StyledHeader $isDarkMode={state.isDarkMode} $scrollDir={scrollDirection}>
-      <Image alt='pokemon logo' src={LOGO_URL} />
-      {true && (
+    <>
+      <StyledHeader $isDarkMode={state.isDarkMode} $scrollDir={scrollDirection}>
+        <Image alt='pokemon logo' src={LOGO_URL} />
         <SearchContainer>
           <ToggleContainer>
             <ToggleButton
@@ -61,21 +66,24 @@ const Header = () => {
             />
           </ToggleContainer>
 
-          <Input.Root>
-            <Input.Search
-              value={filterState.searchTerm}
-              onChange={setSearchTerm}
-            />
-            {filterState.searchTerm && (
-              <Input.Label
-                searchTerm={filterState.searchTerm}
-                length={pokemons.length}
+          {isListPage && (
+            <Input.Root>
+              <Input.Search
+                value={filterState.searchTerm}
+                onChange={setSearchTerm}
               />
-            )}
-          </Input.Root>
+              {filterState.searchTerm && (
+                <Input.Label
+                  searchTerm={filterState.searchTerm}
+                  length={pokemons.length}
+                />
+              )}
+            </Input.Root>
+          )}
         </SearchContainer>
-      )}
-    </StyledHeader>
+      </StyledHeader>
+      {isListPage && <ScrollProgressBar isDarkMode={state.isDarkMode} />}
+    </>
   );
 };
 

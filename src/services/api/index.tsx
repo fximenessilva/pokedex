@@ -1,38 +1,23 @@
-import axios from 'axios';
-
 import { API_ENDPOINTS } from '../../utlils/constants';
-import { Pokemon, Pokemons } from '../../utlils/types';
 
-interface PokemonListResponse {
-  status: number;
-  data: {
-    results: Pokemons[];
-  };
-}
-
-interface PokemonDetailResponse {
-  status: number;
-  data: Pokemon;
-}
-
-export const fetchPokemons = async (): Promise<PokemonListResponse> => {
+export const fetchPokemons = async () => {
   try {
-    const response = await axios.get(API_ENDPOINTS.pokemons_list);
-    return response;
+    const response = await fetch(API_ENDPOINTS.pokemons_list);
+    const json = await response.json();
+    return json;
   } catch (error) {
     console.error(error);
-    throw error;
+    return error;
   }
 };
 
-export const fetchPokemonDetail = async (
-  name: string
-): Promise<PokemonDetailResponse> => {
+export const fetchPokemonDetail = async (name: string) => {
   try {
-    const response = await axios.get(API_ENDPOINTS.pokemon_detail(name));
-    return response;
+    const response = await fetch(API_ENDPOINTS.pokemon_detail(name));
+    const json = await response.json();
+    return json;
   } catch (error) {
     console.error(error);
-    throw error;
+    return error;
   }
 };

@@ -15,10 +15,16 @@ type State = {
 
 type Action = { type: 'SET_DARK_MODE'; payload: boolean };
 
-const THEME_SELECTED = getter(NAMESPACES.theme);
+export const THEME_SELECTED = getter(NAMESPACES.theme);
 
-const initialState: State = {
+const defaultInitialState: State = {
   isDarkMode: THEME_SELECTED || false,
+};
+
+// Define a prop type for the AppProvider component
+type AppProviderProps = {
+  children: React.ReactNode;
+  initialState?: State; // Add initialState prop here
 };
 
 const AppContext = createContext<
@@ -39,7 +45,10 @@ const appReducer = (state: State, action: Action): State => {
   }
 };
 
-export const AppProvider: React.FC = ({ children }) => {
+export const AppProvider: React.FC<AppProviderProps> = ({
+  children,
+  initialState = defaultInitialState,
+}) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   useEffect(() => {
@@ -48,7 +57,7 @@ export const AppProvider: React.FC = ({ children }) => {
     }
   }, []);
 
-  const toggleDarkMode = (payload: any) => {
+  const toggleDarkMode = (payload: boolean) => {
     dispatch({ type: 'SET_DARK_MODE', payload });
     setter(NAMESPACES.theme, payload);
   };

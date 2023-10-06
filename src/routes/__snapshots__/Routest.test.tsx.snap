@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders the Not Found page for unknown routes 1`] = `
+<div>
+  <div
+    class="sc-beyTiQ bLjOgq"
+  >
+    <header
+      class="sc-kFCrIq cjmcFn"
+    >
+      <img
+        alt="pokemon logo"
+        class="sc-jsEeA-d bZFbIX"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      />
+      <div
+        class="sc-irLvoH dFmDvU"
+      >
+        <div
+          class="sc-csKJRI cTSyik"
+        >
+          <div
+            class="sc-fsYfxw bzoMmF"
+            data-testid="toggle-button"
+            id="toggle-button"
+          >
+            <div
+              class="sc-qZruQ eyMNia"
+              data-testid="slider"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-eTNxZ ifXclb"
+    >
+      <a
+        href="/pokemons"
+      >
+        <h1
+          class="sc-brSaGm kBTyLS"
+        >
+          POKEMONS
+        </h1>
+        <div
+          class="sc-ktwNLz llJhsk"
+        >
+          <iframe
+            allowfullscreen=""
+            class="giphy-embed"
+            frameborder="0"
+            height="171.42857142857142px"
+            src="https://giphy.com/embed/GltC4HZLjJLvq"
+            title="Embedded Giphy"
+            width="300px"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Routes renders the Pokemon detail page 1`] = `
+<div>
+  <div
+    class="sc-beyTiQ bLjOgq"
+  >
+    <header
+      class="sc-kFCrIq cjmcFn"
+    >
+      <img
+        alt="pokemon logo"
+        class="sc-jsEeA-d bZFbIX"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      />
+      <div
+        class="sc-irLvoH dFmDvU"
+      >
+        <div
+          class="sc-csKJRI cTSyik"
+        >
+          <div
+            class="sc-fsYfxw bzoMmF"
+            data-testid="toggle-button"
+            id="toggle-button"
+          >
+            <div
+              class="sc-qZruQ eyMNia"
+              data-testid="slider"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-eTNxZ ifXclb"
+    >
+      <a
+        href="/pokemons"
+      >
+        <h1
+          class="sc-brSaGm kBTyLS"
+        >
+          POKEMONS
+        </h1>
+        <div
+          class="sc-ktwNLz llJhsk"
+        >
+          <iframe
+            allowfullscreen=""
+            class="giphy-embed"
+            frameborder="0"
+            height="171.42857142857142px"
+            src="https://giphy.com/embed/GltC4HZLjJLvq"
+            title="Embedded Giphy"
+            width="300px"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Routes renders the Pokemon list page 1`] = `
+<div>
+  <div
+    class="sc-beyTiQ bLjOgq"
+  >
+    <header
+      class="sc-kFCrIq cjmcFn"
+    >
+      <img
+        alt="pokemon logo"
+        class="sc-jsEeA-d bZFbIX"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      />
+      <div
+        class="sc-irLvoH dFmDvU"
+      >
+        <div
+          class="sc-csKJRI cTSyik"
+        >
+          <div
+            class="sc-fsYfxw bzoMmF"
+            data-testid="toggle-button"
+            id="toggle-button"
+          >
+            <div
+              class="sc-qZruQ eyMNia"
+              data-testid="slider"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-eTNxZ ifXclb"
+    >
+      <a
+        href="/pokemons"
+      >
+        <h1
+          class="sc-brSaGm kBTyLS"
+        >
+          POKEMONS
+        </h1>
+        <div
+          class="sc-ktwNLz llJhsk"
+        >
+          <iframe
+            allowfullscreen=""
+            class="giphy-embed"
+            frameborder="0"
+            height="171.42857142857142px"
+            src="https://giphy.com/embed/GltC4HZLjJLvq"
+            title="Embedded Giphy"
+            width="300px"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Routes renders the home page 1`] = `
+<div>
+  <div
+    class="sc-beyTiQ bLjOgq"
+  >
+    <header
+      class="sc-kFCrIq cjmcFn"
+    >
+      <img
+        alt="pokemon logo"
+        class="sc-jsEeA-d bZFbIX"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      />
+      <div
+        class="sc-irLvoH dFmDvU"
+      >
+        <div
+          class="sc-csKJRI cTSyik"
+        >
+          <div
+            class="sc-fsYfxw bzoMmF"
+            data-testid="toggle-button"
+            id="toggle-button"
+          >
+            <div
+              class="sc-qZruQ eyMNia"
+              data-testid="slider"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-eTNxZ ifXclb"
+    >
+      <a
+        href="/pokemons"
+      >
+        <h1
+          class="sc-brSaGm kBTyLS"
+        >
+          POKEMONS
+        </h1>
+        <div
+          class="sc-ktwNLz llJhsk"
+        >
+          <iframe
+            allowfullscreen=""
+            class="giphy-embed"
+            frameborder="0"
+            height="171.42857142857142px"
+            src="https://giphy.com/embed/GltC4HZLjJLvq"
+            title="Embedded Giphy"
+            width="300px"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

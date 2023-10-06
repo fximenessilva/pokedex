@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton renders correctly with the default active state 1`] = `
+<div
+  class="sc-beyTiQ lhUiIW"
+  data-testid="toggle-button"
+  id="toggle-button"
+>
+  <div
+    class="sc-guDMob etweyG"
+    data-testid="slider"
+  />
+</div>
+`;
+
+exports[`ToggleButton renders correctly with the default inactive state 1`] = `
+<div
+  class="sc-beyTiQ lhUiIW"
+  data-testid="toggle-button"
+  id="toggle-button"
+>
+  <div
+    class="sc-guDMob lmCXWR"
+    data-testid="slider"
+  />
+</div>
+`;
