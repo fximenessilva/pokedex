@@ -63,7 +63,7 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
       </a>
     </div>
     <div
-      class="sc-irLvoH kfNsWs"
+      class="sc-irLvoH jlCaa-d"
     >
       <a
         href="/favorite_pokemons"
@@ -145,7 +145,7 @@ exports[`Routes renders the Pokemon detail page 1`] = `
       </a>
     </div>
     <div
-      class="sc-irLvoH kfNsWs"
+      class="sc-irLvoH jlCaa-d"
     >
       <a
         href="/favorite_pokemons"
@@ -227,7 +227,7 @@ exports[`Routes renders the Pokemon list page 1`] = `
       </a>
     </div>
     <div
-      class="sc-irLvoH kfNsWs"
+      class="sc-irLvoH jlCaa-d"
     >
       <a
         href="/favorite_pokemons"
@@ -309,7 +309,7 @@ exports[`Routes renders the home page 1`] = `
       </a>
     </div>
     <div
-      class="sc-irLvoH kfNsWs"
+      class="sc-irLvoH jlCaa-d"
     >
       <a
         href="/favorite_pokemons"

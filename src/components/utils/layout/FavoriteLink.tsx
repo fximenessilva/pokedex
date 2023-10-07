@@ -24,10 +24,10 @@ const float = keyframes`
 
 const FloatingFavoriteLink = styled.div`
   position: fixed;
-  bottom: 20px; /* Adjust this value to control the distance from the bottom */
-  right: 20px; /* Adjust this value to control the distance from the right */
-  z-index: 999; /* Adjust this value to control the stacking order */
-  animation: ${float} 10s ease infinite; /* Apply the floating animation */
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  animation: ${float} 10s ease infinite;
 `;
 
 const FavoriteLink = () => {

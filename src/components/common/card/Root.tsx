@@ -29,15 +29,15 @@ const StyledRoot = styled.div<ComponentWithDarkMode>`
   cursor: pointer;
   filter: grayscale(50%);
   transition: 0.3s;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Initial box shadow */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
   &:hover {
     --_p: 75%;
     filter: grayscale(0%);
     background-color: ${(props) =>
       renderBackground({ $isDarkMode: props.$isDarkMode })};
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow on hover */
-    transition: all 0.3s ease-in-out; /* Smooth transition for box shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
   }
 `;
 

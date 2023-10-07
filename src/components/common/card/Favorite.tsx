@@ -18,9 +18,12 @@ export const renderColor = (props: { $selected: boolean }) =>
   props.$selected ? COLORS.yellow : COLORS.gray;
 
 const StarIcon = styled.div<StarIconProps>`
-  font-size: 24px; /* Adjust the size as needed */
+  font-size: 24px;
   color: ${renderColor};
   cursor: pointer;
+  position: relative;
+  top: 30px;
+  left: 35%;
 `;
 
 const Favorite: FC<FavoriteProps> = ({ pokemon, isFavorite, onClick }) => {
