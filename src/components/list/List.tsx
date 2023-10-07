@@ -42,7 +42,10 @@ const List: FC = () => {
   }, []);
 
   useEffect(() => {
-    dispatch({ type: 'SET_FAVORITES', payload: getter(NAMESPACES.favorites) });
+    dispatch({
+      type: 'SET_FAVORITES',
+      payload: getter(NAMESPACES.favorites) || [],
+    });
   }, [pathname, isPokemonsList]);
 
   const filteredPokemons = useMemo(
