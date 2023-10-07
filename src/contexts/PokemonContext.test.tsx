@@ -239,6 +239,73 @@ describe('pokemonReducer', () => {
 
     expect(newState).toEqual(initialState);
   });
+
+  it('should handle SET_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [],
+      error: null,
+    };
+
+    const action = {
+      type: 'SET_FAVORITES',
+      payload: [{ name: 'Pikachu' }, { name: 'Charizard' }],
+    };
+
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
+
+    expect(newState).toEqual({
+      pokemons: [],
+      pokemon: null,
+      favorites: action.payload,
+      error: null,
+    });
+  });
+  it('should handle ADD_TO_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [],
+      error: null,
+    };
+
+    const action = {
+      type: 'ADD_TO_FAVORITES',
+      payload: { name: 'Pikachu' },
+    };
+
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
+
+    expect(newState.favorites).toEqual([action.payload]);
+  });
+
+  it('should handle REMOVE_FROM_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [{ name: 'Pikachu' }, { name: 'Charizard' }],
+      error: null,
+    };
+
+    const action = {
+      type: 'REMOVE_FROM_FAVORITES',
+      payload: { name: 'Pikachu' },
+    };
+
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
+
+    expect(newState.favorites).toEqual([{ name: 'Charizard' }]);
+  });
 });
 
 describe('initialState', () => {

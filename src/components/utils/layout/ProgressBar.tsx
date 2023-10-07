@@ -3,14 +3,22 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../../utils/constants';
 
+interface PropsDarkMode {
+  $isDarkMode: boolean;
+}
+export const backgroundColorContainer = (props: PropsDarkMode) =>
+  props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray;
+
+export const backgroundColorProgress = (props: PropsDarkMode) =>
+  props.$isDarkMode ? COLORS.yellow : COLORS.blue;
+
 const ProgressBarContainer = styled.div<{ $isDarkMode: boolean }>`
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 5px;
-  background-color: ${(props) =>
-    props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray};
+  background-color: ${backgroundColorContainer};
   z-index: 10;
 `;
 
@@ -22,8 +30,7 @@ interface ProgressBarProps {
 const ProgressBar = styled.div<ProgressBarProps>`
   width: ${(props) => props.$scrollPercentage}%;
   height: 100%;
-  background-color: ${(props) =>
-    props.$isDarkMode ? COLORS.yellow : COLORS.blue};
+  background-color: ${backgroundColorProgress};
   transition: width 0.3s ease;
   border-radius: 50px;
 `;

@@ -6,7 +6,7 @@ import { COLORS } from '../../../utils/constants';
 
 interface FavoriteProps {
   pokemon: Pokemons;
-  isFavorite: boolean;
+  isFavorite?: boolean;
   onClick: () => void;
 }
 
@@ -14,14 +14,17 @@ interface StarIconProps {
   $selected: boolean;
 }
 
+export const renderColor = (props: { $selected: boolean }) =>
+  props.$selected ? COLORS.yellow : COLORS.gray;
+
 const StarIcon = styled.div<StarIconProps>`
   font-size: 24px; /* Adjust the size as needed */
-  color: ${(props) => (props.$selected ? COLORS.yellow : COLORS.gray)};
+  color: ${renderColor};
   cursor: pointer;
 `;
 
 const Favorite: FC<FavoriteProps> = ({ pokemon, isFavorite, onClick }) => {
-  const [isFavoriteState, setFavoriteState] = useState(isFavorite);
+  const [isFavoriteState, setFavoriteState] = useState(isFavorite || false);
 
   const onClickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -30,7 +33,11 @@ const Favorite: FC<FavoriteProps> = ({ pokemon, isFavorite, onClick }) => {
   };
 
   return (
-    <StarIcon onClick={onClickHandler} $selected={isFavoriteState}>
+    <StarIcon
+      data-testid='star-icon'
+      onClick={onClickHandler}
+      $selected={isFavoriteState}
+    >
       &#9733;
     </StarIcon>
   );
