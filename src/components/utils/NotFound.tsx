@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { Container } from './layout';
+
 const NotFound = () => {
-  return <div>Not found page</div>;
+  return <Container>Not found page</Container>;
 };
 
 export default NotFound;
