@@ -6,7 +6,7 @@ Pokedex App is a React application that allows users to view a list of pokemons 
 
 The Pokedex App follows a logical directory structure that promotes organization and separation of concerns. Below is an overview of the main directories and their purposes:
 
-- **src**: This directory contains the source code of the Podcaster app.
+- **src**: This directory contains the source code of the Pokedex app.
   - **components**: Contains reusable UI components used throughout the app.
     - **common**: Contains layout components that can be reused throughout the app.
     - **utils**: Contains components with functionality or layout that can be reused throughout the app.
