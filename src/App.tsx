@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import { Wrapper } from '../utils';
-import { RoutesWrapper } from '../../routes/Routes';
-import { useAppContext } from '../../contexts/AppContext';
-import { ComponentWithDarkMode } from '../../utils/types';
-import { COLORS } from '../../utils/constants';
+import { Wrapper } from './components/utils';
+import { RoutesWrapper } from './routes/Routes';
+import { useAppContext } from './contexts/AppContext';
+import { ComponentWithDarkMode } from './utils/types';
+import { COLORS } from './utils/constants';
 
 export const renderBackground = (props: ComponentWithDarkMode) =>
   props.$isDarkMode ? COLORS.darkest_gray : COLORS.light_gray;

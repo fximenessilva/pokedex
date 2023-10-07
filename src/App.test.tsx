@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { App, AppWrapper, renderBackground, renderColor } from './App';
-import { AppProvider, useAppContext } from '../../contexts/AppContext';
-import { FilterProvider } from '../../contexts/FilterProvider';
-import { PokemonProvider } from '../../contexts/PokemonContext';
+import { AppProvider, useAppContext } from './contexts/AppContext';
+import { FilterProvider } from './contexts/FilterProvider';
+import { PokemonProvider } from './contexts/PokemonContext';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { COLORS } from '../../utils/constants';
+import { COLORS } from './utils/constants';
 import '@testing-library/jest-dom/extend-expect';
 
 const MainWrapper = () => (
