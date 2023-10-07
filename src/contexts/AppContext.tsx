@@ -6,8 +6,8 @@ import React, {
   useEffect,
 } from 'react';
 
-import { NAMESPACES } from '../utlils/constants';
-import { getter, setter } from '../utlils/localStorageHelpers';
+import { NAMESPACES } from '../utils/constants';
+import { getter, setter } from '../utils/localStorageHelpers';
 
 type State = {
   isDarkMode: boolean;
@@ -21,10 +21,9 @@ const defaultInitialState: State = {
   isDarkMode: THEME_SELECTED || false,
 };
 
-// Define a prop type for the AppProvider component
 type AppProviderProps = {
   children: React.ReactNode;
-  initialState?: State; // Add initialState prop here
+  initialState?: State;
 };
 
 const AppContext = createContext<

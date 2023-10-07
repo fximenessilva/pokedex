@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -11,12 +11,13 @@ import {
   COLORS,
   ROUTES,
   BREAKPOINTS,
-} from '../../../utlils/constants';
-import { ComponentWithDarkMode } from '../../../utlils/types';
+} from '../../../utils/constants';
+import { ComponentWithDarkMode } from '../../../utils/types';
 import { Input } from '../../common/searchBar';
 import { ToggleButton } from '../toggle';
 import useScrollDir from '../../../hooks/useScrollDir';
 import { ScrollProgressBar } from '../../utils/layout';
+import { filterByKeyCallback } from '../../../utils/filterHelper';
 
 export const toTop = (props: StyledHeaderProps) =>
   props.$scrollDir === 'down' ? '-180px' : '0';
@@ -72,11 +73,23 @@ const ToggleContainer = styled.div`
 const Header = () => {
   const { state, toggleDarkMode } = useAppContext();
   const { filterState, setSearchTerm } = useFilterState();
-  const { pokemons } = usePokemonContext();
+  const { pokemons, favorites } = usePokemonContext();
   const { pathname } = useLocation();
   const scrollDirection = useScrollDir();
 
-  const isListPage = pathname === ROUTES.pokemons_list;
+  const isListPage = ROUTES.pokemons_list === pathname;
+
+  const isFavoritePage = ROUTES.pokemons_favorites === pathname;
+
+  const list = isListPage ? pokemons : isFavoritePage ? favorites : [];
+
+  const filteredPokemons = useMemo(
+    () =>
+      list.filter((pokemon) =>
+        filterByKeyCallback(pokemon, filterState.searchTerm)
+      ),
+    [pokemons, filterState.searchTerm, favorites, pathname]
+  );
 
   return (
     <>
@@ -92,7 +105,7 @@ const Header = () => {
             />
           </ToggleContainer>
 
-          {isListPage && (
+          {(isListPage || isFavoritePage) && (
             <Input.Root data-testid='input-root'>
               <Input.Search
                 value={filterState.searchTerm}
@@ -101,14 +114,14 @@ const Header = () => {
               {filterState.searchTerm && (
                 <Input.Label
                   searchTerm={filterState.searchTerm}
-                  length={pokemons.length}
+                  length={filteredPokemons.length}
                 />
               )}
             </Input.Root>
           )}
         </SearchContainer>
       </StyledHeader>
-      {isListPage && (
+      {(isListPage || isFavoritePage) && (
         <ScrollProgressBar
           data-testid='scroll-progress-bar'
           isDarkMode={state.isDarkMode}

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import { BREAKPOINTS } from '../../../utlils/constants';
+import { BREAKPOINTS } from '../../../utils/constants';
 
 const calculateWidth = (columns: number) => {
   return (columns / 12) * 100;

@@ -2,8 +2,8 @@ import React, { FC, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 import { useAppContext } from '../../../contexts/AppContext';
-import { ComponentWithDarkMode } from '../../../utlils/types';
-import { COLORS } from '../../../utlils/constants';
+import { ComponentWithDarkMode } from '../../../utils/types';
+import { COLORS } from '../../../utils/constants';
 
 export const renderBackground = (props: { $isDarkMode: boolean | undefined }) =>
   props.$isDarkMode ? COLORS.light_gray : COLORS.medium_gray;

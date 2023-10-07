@@ -6,7 +6,7 @@ import { AppProvider, useAppContext } from '../../contexts/AppContext';
 import { FilterProvider } from '../../contexts/FilterProvider';
 import { PokemonProvider } from '../../contexts/PokemonContext';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { COLORS } from '../../utlils/constants';
+import { COLORS } from '../../utils/constants';
 import '@testing-library/jest-dom/extend-expect';
 
 const MainWrapper = () => (
@@ -90,20 +90,16 @@ describe('AppWrapper', () => {
 
     expect(state.isDarkMode).toBe(false);
 
-    // Toggle dark mode to true (async operation)
     await act(async () => {
       toggleDarkMode(true);
     });
 
-    // Check the state after the toggle operation is complete
     expect(result.current.state.isDarkMode).toBe(true);
 
-    // Toggle dark mode back to false (async operation)
     await act(async () => {
       toggleDarkMode(false);
     });
 
-    // Check the state again after the toggle operation is complete
     expect(result.current.state.isDarkMode).toBe(false);
   });
 });

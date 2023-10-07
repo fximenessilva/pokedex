@@ -40,7 +40,7 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
       class="sc-ifysJV kstVOj"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
           class="sc-dJGLgI fVLMwU"
@@ -106,7 +106,7 @@ exports[`Routes renders the Pokemon detail page 1`] = `
       class="sc-ifysJV kstVOj"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
           class="sc-dJGLgI fVLMwU"
@@ -172,7 +172,7 @@ exports[`Routes renders the Pokemon list page 1`] = `
       class="sc-ifysJV kstVOj"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
           class="sc-dJGLgI fVLMwU"
@@ -238,7 +238,7 @@ exports[`Routes renders the home page 1`] = `
       class="sc-ifysJV kstVOj"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
           class="sc-dJGLgI fVLMwU"

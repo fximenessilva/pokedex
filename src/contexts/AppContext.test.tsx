@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
-import { AppProvider, useAppContext, appReducer } from './AppContext'; // Replace with the actual path
+import { AppProvider, useAppContext, appReducer } from './AppContext';
 import '@testing-library/jest-dom/extend-expect';
 
 const mockLocalStorage = () => {

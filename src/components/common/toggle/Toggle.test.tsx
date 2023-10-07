@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import ToggleButton from './Toggle';
-import { COLORS } from '../../../utlils/constants';
+import { COLORS } from '../../../utils/constants';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('ToggleButton', () => {

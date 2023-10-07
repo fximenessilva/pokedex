@@ -6,7 +6,7 @@ import {
   filterReducer,
   filterInitialState,
   FilterAction,
-} from './FilterProvider'; // Replace with the actual path
+} from './FilterProvider';
 import '@testing-library/jest-dom/extend-expect';
 import { renderHook } from '@testing-library/react-hooks';
 
@@ -94,7 +94,6 @@ describe('filterReducer', () => {
 
 describe('useFilterState', () => {
   it('should throw an error when used outside of FilterProvider', () => {
-    // Render a component that uses useFilterState outside of FilterProvider
     let error = null;
     const ComponentUsingHook = () => {
       try {
@@ -107,14 +106,12 @@ describe('useFilterState', () => {
 
     render(<ComponentUsingHook />);
 
-    // Expect an error to be thrown
     expect(error).toEqual(
       new Error('useFilterState must be used within a FilterProvider')
     );
   });
 
   it('should not throw an error when used inside FilterProvider', () => {
-    // Render a component that uses useFilterState inside FilterProvider
     let error = null;
     const ComponentUsingHook = () => {
       try {
@@ -131,7 +128,6 @@ describe('useFilterState', () => {
       </FilterProvider>
     );
 
-    // Expect no error to be thrown
     expect(error).toBeNull();
   });
 });

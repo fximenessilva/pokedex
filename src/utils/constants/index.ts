@@ -13,6 +13,9 @@ const IMAGES_URL = (name: string | undefined) => {
 const LOGO_URL =
   'https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg';
 
+const POKEBALL_URL =
+  'https://cdn.pnghd.pics/data/804/pokeball-transparent-png-30.png';
+
 const BREAKPOINTS = {
   xsmall: '360px',
   small: '576px',
@@ -23,12 +26,14 @@ const BREAKPOINTS = {
 
 const NAMESPACES = {
   theme: 'pokedex-theme-dark',
+  favorites: 'favorites_pokemons',
 } as const;
 
 const COLORS = {
   yellow: '#FFD700',
   light_gray: '#F5F5F5',
   lighter_gray: '#E0E0E0',
+  gray: '#808080',
   medium_gray: '#CCCCCC',
   dark_gray: '#888888',
   darker_gray: '#666666',
@@ -40,7 +45,8 @@ const COLORS = {
 
 const ROUTES = {
   homepage: '/',
-  pokemons_list: '/pokemons',
+  pokemons_list: '/pokemon',
+  pokemons_favorites: '/favorite_pokemons',
   pokemon_detail: '/pokemon/:pokemonId',
 } as const;
 
@@ -53,4 +59,5 @@ export {
   NAMESPACES,
   COLORS,
   ROUTES,
+  POKEBALL_URL,
 };

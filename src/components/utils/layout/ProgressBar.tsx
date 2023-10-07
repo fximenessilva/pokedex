@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FC } from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../utlils/constants';
+import { COLORS } from '../../../utils/constants';
 
 const ProgressBarContainer = styled.div<{ $isDarkMode: boolean }>`
   position: fixed;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS, BREAKPOINTS } from '../../../utlils/constants';
+import { COLORS, BREAKPOINTS } from '../../../utils/constants';
 
 interface DetailLayoutProps {
   children: React.ReactNode;
