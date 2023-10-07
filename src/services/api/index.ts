@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from '../../utlils/constants';
+import { API_ENDPOINTS } from '../../utils/constants';
 
 export const fetchPokemons = async () => {
   try {

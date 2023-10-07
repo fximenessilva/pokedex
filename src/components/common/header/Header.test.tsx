@@ -64,9 +64,8 @@ describe('Header', () => {
       </MemoryRouter>
     );
 
-    const inputRoot = screen.queryByTestId('input-root'); // Change 'data-testid' as needed
+    const inputRoot = screen.queryByTestId('input-root');
 
-    // Assert that Input.Root is not present in the DOM.
     expect(inputRoot).not.toBeInTheDocument();
   });
 });

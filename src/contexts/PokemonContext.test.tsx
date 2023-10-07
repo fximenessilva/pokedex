@@ -6,18 +6,17 @@ import {
   pokemonReducer,
   PokemonContextProps,
   Action,
-  filterByKeyCallback,
   initialState,
-} from './PokemonContext'; // Replace with the actual import path
-import { FilterProvider } from './FilterProvider'; // Make sure to import FilterProvider as well
+} from './PokemonContext';
+import { FilterProvider } from './FilterProvider';
 import '@testing-library/jest-dom/extend-expect';
 import { renderHook } from '@testing-library/react-hooks';
-import { Pokemons, Pokemon } from '../utlils/types';
+import { Pokemons, Pokemon } from '../utils/types';
 import * as api from '../services/api';
 import { fetchPokemons, fetchPokemonDetail } from '../services/api';
 
 jest.mock('../services/api', () => ({
-  ...jest.requireActual('../services/api'), // Keep the original functions
+  ...jest.requireActual('../services/api'),
   fetchPokemons: jest.fn(),
   fetchPokemonDetail: jest.fn(),
 }));
@@ -46,7 +45,6 @@ describe('PokemonProvider', () => {
 
     expect(result.current.pokemons).toEqual([]);
     expect(result.current.pokemon).toBeNull();
-    expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
   });
   it('handles error when fetching the list of pokemons', async () => {
@@ -72,7 +70,6 @@ describe('PokemonProvider', () => {
     await waitForNextUpdate();
 
     expect(result.current.error).toEqual(new Error('Failed to fetch'));
-    expect(result.current.loading).toBe(false);
   });
 
   it('handles error when fetching the details of a specific pokemon', async () => {
@@ -98,7 +95,6 @@ describe('PokemonProvider', () => {
     await waitForNextUpdate();
 
     expect(result.current.error).toEqual(new Error('Failed to fetch'));
-    expect(result.current.loading).toBe(false);
   });
   it('throws an error when used outside of PokemonProvider', () => {
     const { result } = renderHook(() => usePokemonContext());
@@ -111,7 +107,6 @@ describe('PokemonProvider', () => {
 
 describe('usePokemonContext', () => {
   it('should throw an error when used outside of PokemonProvider', () => {
-    // Render a component that uses usePokemonContext outside of PokemonProvider
     let error = null;
     const ComponentUsingHook = () => {
       try {
@@ -124,14 +119,12 @@ describe('usePokemonContext', () => {
 
     render(<ComponentUsingHook />);
 
-    // Expect an error to be thrown
     expect(error).toEqual(
       new Error('usePokemonContext must be used within a PokemonProvider')
     );
   });
 
   it('should not throw an error when used inside PokemonProvider', () => {
-    // Render a component that uses usePokemonContext inside PokemonProvider
     let error = null;
     const ComponentUsingHook = () => {
       try {
@@ -150,7 +143,6 @@ describe('usePokemonContext', () => {
       </FilterProvider>
     );
 
-    // Expect no error to be thrown
     expect(error).toBeNull();
   });
 });
@@ -160,17 +152,12 @@ describe('pokemonReducer', () => {
     const initialState = {
       pokemons: [],
       pokemon: null,
-      loading: true,
       error: null,
     };
 
     const action = {
       type: 'SET_POKEMONS',
-      payload: [
-        { name: 'Pikachu' },
-        { name: 'Charizard' },
-        // Add more Pokemon objects as needed
-      ],
+      payload: [{ name: 'Pikachu' }, { name: 'Charizard' }],
     };
 
     const newState = pokemonReducer(
@@ -181,7 +168,6 @@ describe('pokemonReducer', () => {
     expect(newState).toEqual({
       pokemons: action.payload,
       pokemon: null,
-      loading: false,
       error: null,
     });
   });
@@ -190,7 +176,6 @@ describe('pokemonReducer', () => {
     const initialState = {
       pokemons: [],
       pokemon: null,
-      loading: true,
       error: null,
     };
 
@@ -207,7 +192,6 @@ describe('pokemonReducer', () => {
     expect(newState).toEqual({
       pokemons: [],
       pokemon: action.payload,
-      loading: false,
       error: null,
     });
   });
@@ -216,7 +200,6 @@ describe('pokemonReducer', () => {
     const initialState = {
       pokemons: [],
       pokemon: null,
-      loading: true,
       error: null,
     };
 
@@ -233,34 +216,7 @@ describe('pokemonReducer', () => {
     expect(newState).toEqual({
       pokemons: [],
       pokemon: null,
-      loading: false,
       error: action.payload,
-    });
-  });
-
-  it('should handle SET_LOADING action correctly', () => {
-    const initialState = {
-      pokemons: [],
-      pokemon: null,
-      loading: true,
-      error: null,
-    };
-
-    const action = {
-      type: 'SET_LOADING',
-      payload: false,
-    };
-
-    const newState = pokemonReducer(
-      initialState as PokemonContextProps,
-      action as Action
-    );
-
-    expect(newState).toEqual({
-      pokemons: [],
-      pokemon: null,
-      loading: false,
-      error: null,
     });
   });
 
@@ -268,7 +224,6 @@ describe('pokemonReducer', () => {
     const initialState = {
       pokemons: [],
       pokemon: null,
-      loading: true,
       error: null,
     };
 
@@ -284,31 +239,72 @@ describe('pokemonReducer', () => {
 
     expect(newState).toEqual(initialState);
   });
-});
 
-describe('filterByKeyCallback', () => {
-  it('should return true when searchTerm matches the Pokemon name (case-insensitive)', () => {
-    const pokemon = {
-      name: 'Pikachu',
+  it('should handle SET_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [],
+      error: null,
     };
 
-    const searchTerm = 'piKaChU';
+    const action = {
+      type: 'SET_FAVORITES',
+      payload: [{ name: 'Pikachu' }, { name: 'Charizard' }],
+    };
 
-    const result = filterByKeyCallback(pokemon as Pokemons, searchTerm);
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
 
-    expect(result).toBe(true);
+    expect(newState).toEqual({
+      pokemons: [],
+      pokemon: null,
+      favorites: action.payload,
+      error: null,
+    });
+  });
+  it('should handle ADD_TO_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [],
+      error: null,
+    };
+
+    const action = {
+      type: 'ADD_TO_FAVORITES',
+      payload: { name: 'Pikachu' },
+    };
+
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
+
+    expect(newState.favorites).toEqual([action.payload]);
   });
 
-  it('should return false when searchTerm does not match the Pokemon name', () => {
-    const pokemon = {
-      name: 'Charizard',
+  it('should handle REMOVE_FROM_FAVORITES action correctly', () => {
+    const initialState = {
+      pokemons: [],
+      pokemon: null,
+      favorites: [{ name: 'Pikachu' }, { name: 'Charizard' }],
+      error: null,
     };
 
-    const searchTerm = 'Pikachu';
+    const action = {
+      type: 'REMOVE_FROM_FAVORITES',
+      payload: { name: 'Pikachu' },
+    };
 
-    const result = filterByKeyCallback(pokemon as Pokemons, searchTerm);
+    const newState = pokemonReducer(
+      initialState as PokemonContextProps,
+      action as Action
+    );
 
-    expect(result).toBe(false);
+    expect(newState.favorites).toEqual([{ name: 'Charizard' }]);
   });
 });
 
@@ -316,7 +312,6 @@ describe('initialState', () => {
   it('should have the correct initial values', () => {
     expect(initialState.pokemons).toEqual([]);
     expect(initialState.pokemon).toBeNull();
-    expect(initialState.loading).toBe(true);
     expect(initialState.error).toBeNull();
     expect(typeof initialState.dispatch).toBe('function');
     expect(typeof initialState.getPokemons).toBe('function');

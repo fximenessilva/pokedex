@@ -7,7 +7,6 @@ describe('NotFound', () => {
   it('renders the "Not found page" text', () => {
     const { getByText } = render(<NotFound />);
 
-    // Ensure that the "Not found page" text is rendered
     expect(getByText('Not found page')).toBeInTheDocument();
   });
 });

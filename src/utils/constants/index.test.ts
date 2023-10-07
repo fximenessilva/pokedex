@@ -65,7 +65,7 @@ describe('Constants', () => {
 
   it('should have the correct ROUTES', () => {
     expect(ROUTES.homepage).toBe('/');
-    expect(ROUTES.pokemons_list).toBe('/pokemons');
+    expect(ROUTES.pokemons_list).toBe('/pokemon');
     expect(ROUTES.pokemon_detail).toBe('/pokemon/:pokemonId');
   });
 });

@@ -2,8 +2,8 @@ import React, { FC, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 import { useAppContext } from '../../../contexts/AppContext';
-import { ComponentWithDarkMode } from '../../../utlils/types';
-import { COLORS } from '../../../utlils/constants';
+import { ComponentWithDarkMode } from '../../../utils/types';
+import { COLORS } from '../../../utils/constants';
 
 export const renderBackground = (props: { $isDarkMode: boolean | undefined }) =>
   props.$isDarkMode ? COLORS.light_gray : COLORS.medium_gray;
@@ -29,15 +29,15 @@ const StyledRoot = styled.div<ComponentWithDarkMode>`
   cursor: pointer;
   filter: grayscale(50%);
   transition: 0.3s;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Initial box shadow */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
   &:hover {
     --_p: 75%;
     filter: grayscale(0%);
     background-color: ${(props) =>
       renderBackground({ $isDarkMode: props.$isDarkMode })};
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow on hover */
-    transition: all 0.3s ease-in-out; /* Smooth transition for box shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
   }
 `;
 

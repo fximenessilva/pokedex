@@ -8,6 +8,7 @@ import DetailLayout, {
   StyledListItem,
   StyledImage,
 } from './DetailLayout';
+import FavoriteLink from './FavoriteLink';
 
 export {
   CenteredWrapper,
@@ -20,4 +21,5 @@ export {
   StyledListItem,
   StyledTitle,
   StyledImage,
+  FavoriteLink,
 };

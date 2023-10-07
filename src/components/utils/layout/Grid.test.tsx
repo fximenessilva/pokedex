@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Grid, GridItem } from './Grid'; // Replace with the actual path to your component
+import { Grid, GridItem } from './Grid';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Grid', () => {

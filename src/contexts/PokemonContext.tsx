@@ -1,23 +1,35 @@
-import React, { createContext, useContext, useMemo, useReducer } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useMemo,
+  useReducer,
+  useEffect,
+} from 'react';
 
 import { fetchPokemons, fetchPokemonDetail } from '../services/api';
-import { Pokemons, Pokemon } from '../utlils/types';
-import { useFilterState } from './FilterProvider';
+import { Pokemons, Pokemon } from '../utils/types';
+
+import { NAMESPACES } from '../utils/constants';
+import { setter, getter } from '../utils/localStorageHelpers';
 
 export type Action =
   | { type: 'SET_POKEMONS'; payload: Pokemons[] }
   | { type: 'SET_POKEMON'; payload: Pokemon }
   | { type: 'SET_ERROR'; payload: any }
-  | { type: 'SET_LOADING'; payload: boolean };
+  | { type: 'ADD_TO_FAVORITES'; payload: Pokemons }
+  | { type: 'REMOVE_FROM_FAVORITES'; payload: Pokemons }
+  | { type: 'SET_FAVORITES'; payload: Pokemons[] };
 
 export interface PokemonContextProps {
   pokemons: Pokemons[] | [];
   pokemon: Pokemon | null;
-  loading: boolean;
+  favorites: Pokemons[] | [];
   error: string | null;
   dispatch: React.Dispatch<Action>;
   getPokemons: () => Promise<void>;
   getPokemon: (name: string) => Promise<void>;
+  setPokemonFavorite: (pokemon: Pokemons) => void;
+  removePokemonFavorite: (pokemon: Pokemons) => void;
 }
 
 const PokemonContext = createContext<PokemonContextProps | undefined>(
@@ -33,37 +45,37 @@ export const pokemonReducer = (
       return {
         ...state,
         pokemons: action.payload,
-        loading: false,
       };
     case 'SET_POKEMON':
       return {
         ...state,
         pokemon: action.payload,
-        loading: false,
       };
     case 'SET_ERROR':
       return {
         ...state,
         error: action.payload,
-        loading: false,
       };
 
-    case 'SET_LOADING':
+    case 'SET_FAVORITES':
       return {
         ...state,
-        loading: action.payload,
+        favorites: action.payload,
       };
+
+    case 'ADD_TO_FAVORITES':
+      const newFavorites = [...state.favorites, action.payload];
+      setter(NAMESPACES.favorites, newFavorites);
+      return { ...state, favorites: newFavorites };
+    case 'REMOVE_FROM_FAVORITES':
+      const filteredFavorites = state.favorites.filter(
+        (item) => item.name !== action.payload.name
+      );
+      setter(NAMESPACES.favorites, filteredFavorites);
+      return { ...state, favorites: filteredFavorites };
 
     default:
       return state;
-  }
-};
-
-export const filterByKeyCallback = (pokemon: Pokemons, searchTerm: string) => {
-  if (searchTerm === '') {
-    return pokemon;
-  } else {
-    return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
   }
 };
 
@@ -74,8 +86,8 @@ interface PokemonProviderProps {
 
 export const initialState: PokemonContextProps = {
   pokemons: [],
+  favorites: [],
   pokemon: null,
-  loading: true,
   error: null,
   dispatch: () => {
     // Placeholder comment
@@ -86,6 +98,12 @@ export const initialState: PokemonContextProps = {
   getPokemon: async (name) => {
     // Placeholder comment
   },
+  setPokemonFavorite: () => {
+    // Placeholder comment
+  },
+  removePokemonFavorite: () => {
+    // Placeholder comment
+  },
 };
 
 export const PokemonProvider: React.FC<PokemonProviderProps> = ({
@@ -93,10 +111,6 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
   value = initialState,
 }) => {
   const [state, dispatch] = useReducer(pokemonReducer, value);
-
-  const {
-    filterState: { searchTerm },
-  } = useFilterState();
 
   const getPokemons = async () => {
     try {
@@ -115,24 +129,27 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({
       dispatch({ type: 'SET_ERROR', payload: error });
     }
   };
-  const filteredPokemons = useMemo(
-    () =>
-      state.pokemons.filter((pokemon) =>
-        filterByKeyCallback(pokemon, searchTerm)
-      ),
-    [state.pokemons, searchTerm]
-  );
+
+  const setPokemonFavorite = (pokemon: Pokemons) => {
+    dispatch({ type: 'ADD_TO_FAVORITES', payload: pokemon });
+  };
+
+  const removePokemonFavorite = (pokemon: Pokemons) => {
+    dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: pokemon });
+  };
 
   return (
     <PokemonContext.Provider
       value={{
-        pokemons: filteredPokemons,
+        pokemons: state.pokemons,
+        favorites: state.favorites,
         pokemon: state.pokemon,
-        loading: state.loading,
         error: state.error,
         dispatch,
         getPokemons,
         getPokemon,
+        setPokemonFavorite,
+        removePokemonFavorite,
       }}
     >
       {children}

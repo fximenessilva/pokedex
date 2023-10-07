@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import useScrollDirection from './useScrollDir';
 
-// Mock the window scroll behavior
 const mockScroll = (scrollY: number) => {
   Object.defineProperty(window, 'pageYOffset', {
     get() {
@@ -49,7 +48,7 @@ describe('useScrollDirection', () => {
     mockScroll(50);
 
     act(() => {
-      mockScroll(55); // Change less than 10px
+      mockScroll(55);
       window.dispatchEvent(new Event('scroll'));
     });
 

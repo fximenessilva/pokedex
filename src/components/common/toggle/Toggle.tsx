@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../utlils/constants';
+import { COLORS } from '../../../utils/constants';
 
 const ToggleButtonWrapper = styled.div`
   display: inline-block;

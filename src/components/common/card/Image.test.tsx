@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Image from './Image'; // Adjust the import path as needed
+import Image from './Image';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Image Component', () => {
@@ -9,10 +9,8 @@ describe('Image Component', () => {
 
     const { getByAltText } = render(<Image src={src} />);
 
-    // Use getByAltText to find the image element by its alt text
     const imageElement = getByAltText('pokemon');
 
-    // Check if the image element exists and has the correct src attribute
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', src);
   });

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { COLORS } from '../../utlils/constants';
+import { COLORS } from '../../utils/constants';
 
 const centeredPosition = css`
   position: fixed;
@@ -16,7 +16,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // height: 100vh;
   overflow: hidden;
 `;
 
@@ -47,7 +46,7 @@ const Home = () => {
 
   return (
     <Container>
-      <Link to='/pokemons'>
+      <Link to='/pokemon'>
         <Title>POKEMONS</Title>
         <IframeContainer>
           <iframe

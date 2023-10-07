@@ -3,33 +3,33 @@
 exports[`Routes renders the Not Found page for unknown routes 1`] = `
 <div>
   <div
-    class="sc-beyTiQ bLjOgq"
+    class="sc-beyTiQ kJKoIO"
   >
     <header
-      class="sc-fmKFmJ jwmiNx"
+      class="sc-fHekAb cgnffn"
     >
       <a
         href="/"
       >
         <img
           alt="pokemon logo"
-          class="sc-hABBGs eDrYbX"
+          class="sc-fmKFmJ frvygH"
           src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         />
       </a>
       <div
-        class="sc-fHekAb itxTRf"
+        class="sc-blmCWO jpbkxE"
       >
         <div
-          class="sc-blmCWO wzgTu"
+          class="sc-ifysJV ghnMwH"
         >
           <div
-            class="sc-brSaGm gDsUOc"
+            class="sc-ktwNLz jWgelE"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-ktwNLz kCgZiU"
+              class="sc-hABBGs eziwOt"
               data-testid="slider"
             />
           </div>
@@ -37,18 +37,18 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
       </div>
     </header>
     <div
-      class="sc-ifysJV kstVOj"
+      class="sc-dJGLgI dNAtOa"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
-          class="sc-dJGLgI fVLMwU"
+          class="sc-hIPCWT knkosu"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-hIPCWT iyhGDs"
+          class="sc-dmXVtG bncRCZ"
         >
           <iframe
             allowfullscreen=""
@@ -58,6 +58,22 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
             src="https://giphy.com/embed/GltC4HZLjJLvq"
             title="Embedded Giphy"
             width="300px"
+          />
+        </div>
+      </a>
+    </div>
+    <div
+      class="sc-irLvoH jlCaa-d"
+    >
+      <a
+        href="/favorite_pokemons"
+      >
+        <div>
+          <img
+            alt="Pokeball"
+            height="75"
+            src="data:image/svg+xml;base64,CiA8c3ZnIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEzMjQuMiAxMzE4LjkyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM4MzgzODt9LmNscy0ye2ZpbGw6I2VlM2YzZTt9LmNscy0ze2ZpbGw6I2ZkZmNmYzt9LmNscy00e2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjM8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgwMy4zLDEwOS40M2M1LjUxLDEuMjUsMTEuMTUuOCwxNi43MiwxLjE0cTMzLjIxLDIuMDksNjYsNy4zN2E2NDQuNjksNjQ0LjY5LDAsMCwxLDkwLjg2LDIxLjMxQTY2My4xNCw2NjMuMTQsMCwwLDEsMTQyNCw2MTguMDVhNjUxLjMsNjUxLjMsMCwwLDEsMTUsOTAuNTRjMS45LDIwLjIyLDMuMzgsNDAuNSwyLjgxLDYwLjgxLS42OCwyMy45Mi0xLjgxLDQ3LjgxLTQuNDgsNzEuNjNhNjU5LjIxLDY1OS4yMSwwLDAsMS0xNzYuNjcsMzgwLDY1OC43Nyw2NTguNzcsMCwwLDEtMjI0LjM2LDE1NS42OCw2NDUuNTYsNjQ1LjU2LDAsMCwxLTEyNS41OCwzOC42OEE2NTkuMjQsNjU5LjI0LDAsMCwxLDgyMiwxNDI3YTY3My45MSw2NzMuOTEsMCwwLDEtOTAtLjMxLDY1OS4zMyw2NTkuMzMsMCwwLDEtMzgyLjM1LTE1Ny4xNlEyMTgsMTE1Ni4zNCwxNTcuOCw5OTMuNTFhNjM2LjkzLDYzNi45MywwLDAsMS0zMi41OS0xMjcuN2MtNi4yOS00Mi40NC04LjkzLTg1LjEyLTYuNjktMTI4QTY2Mi4yNSw2NjIuMjUsMCwwLDEsNjQxLjMxLDEyNGE2NzYuNTYsNjc2LjU2LDAsMCwxLDkyLjIzLTEzYzcuMDUtLjUxLDE0LjExLS42OCwyMS4xNi0xYTI2LjQ3LDI2LjQ3LDAsMCwwLDIuOS0uNDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTE4My44NCw3MDguMjFxLTEwNy42NCwwLTIxNS4yNiwwYy0yLjMxLDAtMy41OC0uMzUtNC42MS0yLjg2LTI1LjQ4LTYxLjg3LTcwLjQzLTEwMS41Ni0xMzYtMTE1LjYxLTU1Ljk0LTEyLTEwNy4xNS42NS0xNTIuNTMsMzUuNDktMjcuMSwyMC44Mi00Ni42Niw0Ny41Mi01OC45NSw3OS40Ni0xLDIuNjMtMi4yLDMuNTYtNS4xNSwzLjU2cS0yMjQuNy0uMTMtNDQ5LjQtLjA4Yy01LDAtNSwwLTQuNTEtNC45NGE1NzUuNjIsNTc1LjYyLDAsMCwxLDEyLjg0LTc1Ljc0QTYyNi44Myw2MjYuODMsMCwwLDEsNjYwLjU0LDE1Ni42MWMxOS4xMi0zLjczLDM4LjQxLTYuMzksNTcuODEtOC4yNWE2MjAsNjIwLDAsMCwxLDY4LjM5LTNBNjcwLDY3MCwwLDAsMSw4NTQsMTQ5LjcxLDYxNSw2MTUsMCwwLDEsOTg0LjYsMTc5LjU5YTYyNy44Miw2MjcuODIsMCwwLDEsMzgyLDM3Mi44MSw2MTMuNTEsNjEzLjUxLDAsMCwxLDMwLjc0LDExNC40N2MyLjA5LDEyLjU4LDMuNDYsMjUuMjksNS4zNSwzNy45MS41LDMuMzItMSwzLjQ4LTMuNTgsMy40OFExMjkxLjQ2LDcwOC4xNywxMTgzLjg0LDcwOC4yMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTcuNzMgLTEwOS40MykiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zOTAuODMsODUwLjYycTExMy43NiwwLDIyNy41MS0uMDdjMi40MywwLDMuNjMuNjgsNC42NywyLjg1QTE4Ni4zNiwxODYuMzYsMCwwLDAsNzkyLjQ4LDk1Ny44N2MzOC40Ni0uOCw3My42MS0xMiwxMDUuMDktMzQuMzJBMTg0LjgzLDE4NC44MywwLDAsMCw5NTcuNDUsODUzYTMuNjEsMy42MSwwLDAsMSwzLjg3LTIuNDNxMjE3LjkuMDcsNDM1LjgzLDBjNCwwLDIuNjIsMS44LDIuMzYsNC0xLjU5LDEzLjQ1LTQsMjYuNzYtNi44LDQwYTYzMC43OCw2MzAuNzgsMCwwLDEtMjMuNTcsODMuMjYsNjIzLjA4LDYyMy4wOCwwLDAsMS04Ny45MywxNjMuNTMsNjE2LjUxLDYxNi41MSwwLDAsMS03Mi44NSw4MS40OSw2MjUuMyw2MjUuMywwLDAsMS0xNjUuNzIsMTEyLDYxNy4yNSw2MTcuMjUsMCwwLDEtMTIyLjEyLDQxLjgxYy0xNS42MiwzLjU3LTMxLjMyLDYuNy00Ny4xNSw5LjA3LTExLjkxLDEuNzgtMjMuOSwzLTM1LjksNC4yLTI0LjczLDIuNTItNDkuNTIsMi44Ny03NC4zMiwyLjQ4LTEzLjU0LS4yMS0yNy0xLjItNDAuNTUtMi40Mi0xMC43MS0xLTIxLjQxLTIuMDYtMzItMy41OEE2MjQsNjI0LDAsMCwxLDM4Ni44NiwxMjU0LDYyMy44NSw2MjMuODUsMCwwLDEsMzEzLDExODMuOTNjLTU2LjE0LTYzLjA4LTk4LjMtMTM0LjM4LTEyNS43MS0yMTQuMzFhNTk1LjQ1LDU5NS40NSwwLDAsMS0yMi04MmMtMi4xMi0xMS4xNS0zLjgtMjIuMzctNS44My0zMy41My0uNDgtMi41OS4xOS0zLjUsMy4xNC0zLjVRMjc2Ljc0LDg1MC42OSwzOTAuODMsODUwLjYyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNy43MyAtMTA5LjQzKSIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTc4OS44LDYyMC43OGM4NC4zOC4zOSwxNTEuNjYsNjguMDgsMTUxLjE3LDE1MS45MmExNTAuOTEsMTUwLjkxLDAsMCwxLTMwMS44MS0xLjE1QzYzOS4zMiw2ODcuMzIsNzA3LjE3LDYyMS4zNyw3ODkuOCw2MjAuNzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PC9zdmc+CiAgICA="
+            width="75"
           />
         </div>
       </a>
@@ -69,33 +85,33 @@ exports[`Routes renders the Not Found page for unknown routes 1`] = `
 exports[`Routes renders the Pokemon detail page 1`] = `
 <div>
   <div
-    class="sc-beyTiQ bLjOgq"
+    class="sc-beyTiQ kJKoIO"
   >
     <header
-      class="sc-fmKFmJ jwmiNx"
+      class="sc-fHekAb cgnffn"
     >
       <a
         href="/"
       >
         <img
           alt="pokemon logo"
-          class="sc-hABBGs eDrYbX"
+          class="sc-fmKFmJ frvygH"
           src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         />
       </a>
       <div
-        class="sc-fHekAb itxTRf"
+        class="sc-blmCWO jpbkxE"
       >
         <div
-          class="sc-blmCWO wzgTu"
+          class="sc-ifysJV ghnMwH"
         >
           <div
-            class="sc-brSaGm gDsUOc"
+            class="sc-ktwNLz jWgelE"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-ktwNLz kCgZiU"
+              class="sc-hABBGs eziwOt"
               data-testid="slider"
             />
           </div>
@@ -103,18 +119,18 @@ exports[`Routes renders the Pokemon detail page 1`] = `
       </div>
     </header>
     <div
-      class="sc-ifysJV kstVOj"
+      class="sc-dJGLgI dNAtOa"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
-          class="sc-dJGLgI fVLMwU"
+          class="sc-hIPCWT knkosu"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-hIPCWT iyhGDs"
+          class="sc-dmXVtG bncRCZ"
         >
           <iframe
             allowfullscreen=""
@@ -124,6 +140,22 @@ exports[`Routes renders the Pokemon detail page 1`] = `
             src="https://giphy.com/embed/GltC4HZLjJLvq"
             title="Embedded Giphy"
             width="300px"
+          />
+        </div>
+      </a>
+    </div>
+    <div
+      class="sc-irLvoH jlCaa-d"
+    >
+      <a
+        href="/favorite_pokemons"
+      >
+        <div>
+          <img
+            alt="Pokeball"
+            height="75"
+            src="data:image/svg+xml;base64,CiA8c3ZnIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEzMjQuMiAxMzE4LjkyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM4MzgzODt9LmNscy0ye2ZpbGw6I2VlM2YzZTt9LmNscy0ze2ZpbGw6I2ZkZmNmYzt9LmNscy00e2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjM8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgwMy4zLDEwOS40M2M1LjUxLDEuMjUsMTEuMTUuOCwxNi43MiwxLjE0cTMzLjIxLDIuMDksNjYsNy4zN2E2NDQuNjksNjQ0LjY5LDAsMCwxLDkwLjg2LDIxLjMxQTY2My4xNCw2NjMuMTQsMCwwLDEsMTQyNCw2MTguMDVhNjUxLjMsNjUxLjMsMCwwLDEsMTUsOTAuNTRjMS45LDIwLjIyLDMuMzgsNDAuNSwyLjgxLDYwLjgxLS42OCwyMy45Mi0xLjgxLDQ3LjgxLTQuNDgsNzEuNjNhNjU5LjIxLDY1OS4yMSwwLDAsMS0xNzYuNjcsMzgwLDY1OC43Nyw2NTguNzcsMCwwLDEtMjI0LjM2LDE1NS42OCw2NDUuNTYsNjQ1LjU2LDAsMCwxLTEyNS41OCwzOC42OEE2NTkuMjQsNjU5LjI0LDAsMCwxLDgyMiwxNDI3YTY3My45MSw2NzMuOTEsMCwwLDEtOTAtLjMxLDY1OS4zMyw2NTkuMzMsMCwwLDEtMzgyLjM1LTE1Ny4xNlEyMTgsMTE1Ni4zNCwxNTcuOCw5OTMuNTFhNjM2LjkzLDYzNi45MywwLDAsMS0zMi41OS0xMjcuN2MtNi4yOS00Mi40NC04LjkzLTg1LjEyLTYuNjktMTI4QTY2Mi4yNSw2NjIuMjUsMCwwLDEsNjQxLjMxLDEyNGE2NzYuNTYsNjc2LjU2LDAsMCwxLDkyLjIzLTEzYzcuMDUtLjUxLDE0LjExLS42OCwyMS4xNi0xYTI2LjQ3LDI2LjQ3LDAsMCwwLDIuOS0uNDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTE4My44NCw3MDguMjFxLTEwNy42NCwwLTIxNS4yNiwwYy0yLjMxLDAtMy41OC0uMzUtNC42MS0yLjg2LTI1LjQ4LTYxLjg3LTcwLjQzLTEwMS41Ni0xMzYtMTE1LjYxLTU1Ljk0LTEyLTEwNy4xNS42NS0xNTIuNTMsMzUuNDktMjcuMSwyMC44Mi00Ni42Niw0Ny41Mi01OC45NSw3OS40Ni0xLDIuNjMtMi4yLDMuNTYtNS4xNSwzLjU2cS0yMjQuNy0uMTMtNDQ5LjQtLjA4Yy01LDAtNSwwLTQuNTEtNC45NGE1NzUuNjIsNTc1LjYyLDAsMCwxLDEyLjg0LTc1Ljc0QTYyNi44Myw2MjYuODMsMCwwLDEsNjYwLjU0LDE1Ni42MWMxOS4xMi0zLjczLDM4LjQxLTYuMzksNTcuODEtOC4yNWE2MjAsNjIwLDAsMCwxLDY4LjM5LTNBNjcwLDY3MCwwLDAsMSw4NTQsMTQ5LjcxLDYxNSw2MTUsMCwwLDEsOTg0LjYsMTc5LjU5YTYyNy44Miw2MjcuODIsMCwwLDEsMzgyLDM3Mi44MSw2MTMuNTEsNjEzLjUxLDAsMCwxLDMwLjc0LDExNC40N2MyLjA5LDEyLjU4LDMuNDYsMjUuMjksNS4zNSwzNy45MS41LDMuMzItMSwzLjQ4LTMuNTgsMy40OFExMjkxLjQ2LDcwOC4xNywxMTgzLjg0LDcwOC4yMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTcuNzMgLTEwOS40MykiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zOTAuODMsODUwLjYycTExMy43NiwwLDIyNy41MS0uMDdjMi40MywwLDMuNjMuNjgsNC42NywyLjg1QTE4Ni4zNiwxODYuMzYsMCwwLDAsNzkyLjQ4LDk1Ny44N2MzOC40Ni0uOCw3My42MS0xMiwxMDUuMDktMzQuMzJBMTg0LjgzLDE4NC44MywwLDAsMCw5NTcuNDUsODUzYTMuNjEsMy42MSwwLDAsMSwzLjg3LTIuNDNxMjE3LjkuMDcsNDM1LjgzLDBjNCwwLDIuNjIsMS44LDIuMzYsNC0xLjU5LDEzLjQ1LTQsMjYuNzYtNi44LDQwYTYzMC43OCw2MzAuNzgsMCwwLDEtMjMuNTcsODMuMjYsNjIzLjA4LDYyMy4wOCwwLDAsMS04Ny45MywxNjMuNTMsNjE2LjUxLDYxNi41MSwwLDAsMS03Mi44NSw4MS40OSw2MjUuMyw2MjUuMywwLDAsMS0xNjUuNzIsMTEyLDYxNy4yNSw2MTcuMjUsMCwwLDEtMTIyLjEyLDQxLjgxYy0xNS42MiwzLjU3LTMxLjMyLDYuNy00Ny4xNSw5LjA3LTExLjkxLDEuNzgtMjMuOSwzLTM1LjksNC4yLTI0LjczLDIuNTItNDkuNTIsMi44Ny03NC4zMiwyLjQ4LTEzLjU0LS4yMS0yNy0xLjItNDAuNTUtMi40Mi0xMC43MS0xLTIxLjQxLTIuMDYtMzItMy41OEE2MjQsNjI0LDAsMCwxLDM4Ni44NiwxMjU0LDYyMy44NSw2MjMuODUsMCwwLDEsMzEzLDExODMuOTNjLTU2LjE0LTYzLjA4LTk4LjMtMTM0LjM4LTEyNS43MS0yMTQuMzFhNTk1LjQ1LDU5NS40NSwwLDAsMS0yMi04MmMtMi4xMi0xMS4xNS0zLjgtMjIuMzctNS44My0zMy41My0uNDgtMi41OS4xOS0zLjUsMy4xNC0zLjVRMjc2Ljc0LDg1MC42OSwzOTAuODMsODUwLjYyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNy43MyAtMTA5LjQzKSIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTc4OS44LDYyMC43OGM4NC4zOC4zOSwxNTEuNjYsNjguMDgsMTUxLjE3LDE1MS45MmExNTAuOTEsMTUwLjkxLDAsMCwxLTMwMS44MS0xLjE1QzYzOS4zMiw2ODcuMzIsNzA3LjE3LDYyMS4zNyw3ODkuOCw2MjAuNzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PC9zdmc+CiAgICA="
+            width="75"
           />
         </div>
       </a>
@@ -135,33 +167,33 @@ exports[`Routes renders the Pokemon detail page 1`] = `
 exports[`Routes renders the Pokemon list page 1`] = `
 <div>
   <div
-    class="sc-beyTiQ bLjOgq"
+    class="sc-beyTiQ kJKoIO"
   >
     <header
-      class="sc-fmKFmJ jwmiNx"
+      class="sc-fHekAb cgnffn"
     >
       <a
         href="/"
       >
         <img
           alt="pokemon logo"
-          class="sc-hABBGs eDrYbX"
+          class="sc-fmKFmJ frvygH"
           src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         />
       </a>
       <div
-        class="sc-fHekAb itxTRf"
+        class="sc-blmCWO jpbkxE"
       >
         <div
-          class="sc-blmCWO wzgTu"
+          class="sc-ifysJV ghnMwH"
         >
           <div
-            class="sc-brSaGm gDsUOc"
+            class="sc-ktwNLz jWgelE"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-ktwNLz kCgZiU"
+              class="sc-hABBGs eziwOt"
               data-testid="slider"
             />
           </div>
@@ -169,18 +201,18 @@ exports[`Routes renders the Pokemon list page 1`] = `
       </div>
     </header>
     <div
-      class="sc-ifysJV kstVOj"
+      class="sc-dJGLgI dNAtOa"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
-          class="sc-dJGLgI fVLMwU"
+          class="sc-hIPCWT knkosu"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-hIPCWT iyhGDs"
+          class="sc-dmXVtG bncRCZ"
         >
           <iframe
             allowfullscreen=""
@@ -194,6 +226,22 @@ exports[`Routes renders the Pokemon list page 1`] = `
         </div>
       </a>
     </div>
+    <div
+      class="sc-irLvoH jlCaa-d"
+    >
+      <a
+        href="/favorite_pokemons"
+      >
+        <div>
+          <img
+            alt="Pokeball"
+            height="75"
+            src="data:image/svg+xml;base64,CiA8c3ZnIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEzMjQuMiAxMzE4LjkyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM4MzgzODt9LmNscy0ye2ZpbGw6I2VlM2YzZTt9LmNscy0ze2ZpbGw6I2ZkZmNmYzt9LmNscy00e2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjM8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgwMy4zLDEwOS40M2M1LjUxLDEuMjUsMTEuMTUuOCwxNi43MiwxLjE0cTMzLjIxLDIuMDksNjYsNy4zN2E2NDQuNjksNjQ0LjY5LDAsMCwxLDkwLjg2LDIxLjMxQTY2My4xNCw2NjMuMTQsMCwwLDEsMTQyNCw2MTguMDVhNjUxLjMsNjUxLjMsMCwwLDEsMTUsOTAuNTRjMS45LDIwLjIyLDMuMzgsNDAuNSwyLjgxLDYwLjgxLS42OCwyMy45Mi0xLjgxLDQ3LjgxLTQuNDgsNzEuNjNhNjU5LjIxLDY1OS4yMSwwLDAsMS0xNzYuNjcsMzgwLDY1OC43Nyw2NTguNzcsMCwwLDEtMjI0LjM2LDE1NS42OCw2NDUuNTYsNjQ1LjU2LDAsMCwxLTEyNS41OCwzOC42OEE2NTkuMjQsNjU5LjI0LDAsMCwxLDgyMiwxNDI3YTY3My45MSw2NzMuOTEsMCwwLDEtOTAtLjMxLDY1OS4zMyw2NTkuMzMsMCwwLDEtMzgyLjM1LTE1Ny4xNlEyMTgsMTE1Ni4zNCwxNTcuOCw5OTMuNTFhNjM2LjkzLDYzNi45MywwLDAsMS0zMi41OS0xMjcuN2MtNi4yOS00Mi40NC04LjkzLTg1LjEyLTYuNjktMTI4QTY2Mi4yNSw2NjIuMjUsMCwwLDEsNjQxLjMxLDEyNGE2NzYuNTYsNjc2LjU2LDAsMCwxLDkyLjIzLTEzYzcuMDUtLjUxLDE0LjExLS42OCwyMS4xNi0xYTI2LjQ3LDI2LjQ3LDAsMCwwLDIuOS0uNDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTE4My44NCw3MDguMjFxLTEwNy42NCwwLTIxNS4yNiwwYy0yLjMxLDAtMy41OC0uMzUtNC42MS0yLjg2LTI1LjQ4LTYxLjg3LTcwLjQzLTEwMS41Ni0xMzYtMTE1LjYxLTU1Ljk0LTEyLTEwNy4xNS42NS0xNTIuNTMsMzUuNDktMjcuMSwyMC44Mi00Ni42Niw0Ny41Mi01OC45NSw3OS40Ni0xLDIuNjMtMi4yLDMuNTYtNS4xNSwzLjU2cS0yMjQuNy0uMTMtNDQ5LjQtLjA4Yy01LDAtNSwwLTQuNTEtNC45NGE1NzUuNjIsNTc1LjYyLDAsMCwxLDEyLjg0LTc1Ljc0QTYyNi44Myw2MjYuODMsMCwwLDEsNjYwLjU0LDE1Ni42MWMxOS4xMi0zLjczLDM4LjQxLTYuMzksNTcuODEtOC4yNWE2MjAsNjIwLDAsMCwxLDY4LjM5LTNBNjcwLDY3MCwwLDAsMSw4NTQsMTQ5LjcxLDYxNSw2MTUsMCwwLDEsOTg0LjYsMTc5LjU5YTYyNy44Miw2MjcuODIsMCwwLDEsMzgyLDM3Mi44MSw2MTMuNTEsNjEzLjUxLDAsMCwxLDMwLjc0LDExNC40N2MyLjA5LDEyLjU4LDMuNDYsMjUuMjksNS4zNSwzNy45MS41LDMuMzItMSwzLjQ4LTMuNTgsMy40OFExMjkxLjQ2LDcwOC4xNywxMTgzLjg0LDcwOC4yMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTcuNzMgLTEwOS40MykiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zOTAuODMsODUwLjYycTExMy43NiwwLDIyNy41MS0uMDdjMi40MywwLDMuNjMuNjgsNC42NywyLjg1QTE4Ni4zNiwxODYuMzYsMCwwLDAsNzkyLjQ4LDk1Ny44N2MzOC40Ni0uOCw3My42MS0xMiwxMDUuMDktMzQuMzJBMTg0LjgzLDE4NC44MywwLDAsMCw5NTcuNDUsODUzYTMuNjEsMy42MSwwLDAsMSwzLjg3LTIuNDNxMjE3LjkuMDcsNDM1LjgzLDBjNCwwLDIuNjIsMS44LDIuMzYsNC0xLjU5LDEzLjQ1LTQsMjYuNzYtNi44LDQwYTYzMC43OCw2MzAuNzgsMCwwLDEtMjMuNTcsODMuMjYsNjIzLjA4LDYyMy4wOCwwLDAsMS04Ny45MywxNjMuNTMsNjE2LjUxLDYxNi41MSwwLDAsMS03Mi44NSw4MS40OSw2MjUuMyw2MjUuMywwLDAsMS0xNjUuNzIsMTEyLDYxNy4yNSw2MTcuMjUsMCwwLDEtMTIyLjEyLDQxLjgxYy0xNS42MiwzLjU3LTMxLjMyLDYuNy00Ny4xNSw5LjA3LTExLjkxLDEuNzgtMjMuOSwzLTM1LjksNC4yLTI0LjczLDIuNTItNDkuNTIsMi44Ny03NC4zMiwyLjQ4LTEzLjU0LS4yMS0yNy0xLjItNDAuNTUtMi40Mi0xMC43MS0xLTIxLjQxLTIuMDYtMzItMy41OEE2MjQsNjI0LDAsMCwxLDM4Ni44NiwxMjU0LDYyMy44NSw2MjMuODUsMCwwLDEsMzEzLDExODMuOTNjLTU2LjE0LTYzLjA4LTk4LjMtMTM0LjM4LTEyNS43MS0yMTQuMzFhNTk1LjQ1LDU5NS40NSwwLDAsMS0yMi04MmMtMi4xMi0xMS4xNS0zLjgtMjIuMzctNS44My0zMy41My0uNDgtMi41OS4xOS0zLjUsMy4xNC0zLjVRMjc2Ljc0LDg1MC42OSwzOTAuODMsODUwLjYyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNy43MyAtMTA5LjQzKSIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTc4OS44LDYyMC43OGM4NC4zOC4zOSwxNTEuNjYsNjguMDgsMTUxLjE3LDE1MS45MmExNTAuOTEsMTUwLjkxLDAsMCwxLTMwMS44MS0xLjE1QzYzOS4zMiw2ODcuMzIsNzA3LjE3LDYyMS4zNyw3ODkuOCw2MjAuNzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PC9zdmc+CiAgICA="
+            width="75"
+          />
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -201,33 +249,33 @@ exports[`Routes renders the Pokemon list page 1`] = `
 exports[`Routes renders the home page 1`] = `
 <div>
   <div
-    class="sc-beyTiQ bLjOgq"
+    class="sc-beyTiQ kJKoIO"
   >
     <header
-      class="sc-fmKFmJ jwmiNx"
+      class="sc-fHekAb cgnffn"
     >
       <a
         href="/"
       >
         <img
           alt="pokemon logo"
-          class="sc-hABBGs eDrYbX"
+          class="sc-fmKFmJ frvygH"
           src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         />
       </a>
       <div
-        class="sc-fHekAb itxTRf"
+        class="sc-blmCWO jpbkxE"
       >
         <div
-          class="sc-blmCWO wzgTu"
+          class="sc-ifysJV ghnMwH"
         >
           <div
-            class="sc-brSaGm gDsUOc"
+            class="sc-ktwNLz jWgelE"
             data-testid="toggle-button"
             id="toggle-button"
           >
             <div
-              class="sc-ktwNLz kCgZiU"
+              class="sc-hABBGs eziwOt"
               data-testid="slider"
             />
           </div>
@@ -235,18 +283,18 @@ exports[`Routes renders the home page 1`] = `
       </div>
     </header>
     <div
-      class="sc-ifysJV kstVOj"
+      class="sc-dJGLgI dNAtOa"
     >
       <a
-        href="/pokemons"
+        href="/pokemon"
       >
         <h1
-          class="sc-dJGLgI fVLMwU"
+          class="sc-hIPCWT knkosu"
         >
           POKEMONS
         </h1>
         <div
-          class="sc-hIPCWT iyhGDs"
+          class="sc-dmXVtG bncRCZ"
         >
           <iframe
             allowfullscreen=""
@@ -256,6 +304,22 @@ exports[`Routes renders the home page 1`] = `
             src="https://giphy.com/embed/GltC4HZLjJLvq"
             title="Embedded Giphy"
             width="300px"
+          />
+        </div>
+      </a>
+    </div>
+    <div
+      class="sc-irLvoH jlCaa-d"
+    >
+      <a
+        href="/favorite_pokemons"
+      >
+        <div>
+          <img
+            alt="Pokeball"
+            height="75"
+            src="data:image/svg+xml;base64,CiA8c3ZnIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEzMjQuMiAxMzE4LjkyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM4MzgzODt9LmNscy0ye2ZpbGw6I2VlM2YzZTt9LmNscy0ze2ZpbGw6I2ZkZmNmYzt9LmNscy00e2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjM8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgwMy4zLDEwOS40M2M1LjUxLDEuMjUsMTEuMTUuOCwxNi43MiwxLjE0cTMzLjIxLDIuMDksNjYsNy4zN2E2NDQuNjksNjQ0LjY5LDAsMCwxLDkwLjg2LDIxLjMxQTY2My4xNCw2NjMuMTQsMCwwLDEsMTQyNCw2MTguMDVhNjUxLjMsNjUxLjMsMCwwLDEsMTUsOTAuNTRjMS45LDIwLjIyLDMuMzgsNDAuNSwyLjgxLDYwLjgxLS42OCwyMy45Mi0xLjgxLDQ3LjgxLTQuNDgsNzEuNjNhNjU5LjIxLDY1OS4yMSwwLDAsMS0xNzYuNjcsMzgwLDY1OC43Nyw2NTguNzcsMCwwLDEtMjI0LjM2LDE1NS42OCw2NDUuNTYsNjQ1LjU2LDAsMCwxLTEyNS41OCwzOC42OEE2NTkuMjQsNjU5LjI0LDAsMCwxLDgyMiwxNDI3YTY3My45MSw2NzMuOTEsMCwwLDEtOTAtLjMxLDY1OS4zMyw2NTkuMzMsMCwwLDEtMzgyLjM1LTE1Ny4xNlEyMTgsMTE1Ni4zNCwxNTcuOCw5OTMuNTFhNjM2LjkzLDYzNi45MywwLDAsMS0zMi41OS0xMjcuN2MtNi4yOS00Mi40NC04LjkzLTg1LjEyLTYuNjktMTI4QTY2Mi4yNSw2NjIuMjUsMCwwLDEsNjQxLjMxLDEyNGE2NzYuNTYsNjc2LjU2LDAsMCwxLDkyLjIzLTEzYzcuMDUtLjUxLDE0LjExLS42OCwyMS4xNi0xYTI2LjQ3LDI2LjQ3LDAsMCwwLDIuOS0uNDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTE4My44NCw3MDguMjFxLTEwNy42NCwwLTIxNS4yNiwwYy0yLjMxLDAtMy41OC0uMzUtNC42MS0yLjg2LTI1LjQ4LTYxLjg3LTcwLjQzLTEwMS41Ni0xMzYtMTE1LjYxLTU1Ljk0LTEyLTEwNy4xNS42NS0xNTIuNTMsMzUuNDktMjcuMSwyMC44Mi00Ni42Niw0Ny41Mi01OC45NSw3OS40Ni0xLDIuNjMtMi4yLDMuNTYtNS4xNSwzLjU2cS0yMjQuNy0uMTMtNDQ5LjQtLjA4Yy01LDAtNSwwLTQuNTEtNC45NGE1NzUuNjIsNTc1LjYyLDAsMCwxLDEyLjg0LTc1Ljc0QTYyNi44Myw2MjYuODMsMCwwLDEsNjYwLjU0LDE1Ni42MWMxOS4xMi0zLjczLDM4LjQxLTYuMzksNTcuODEtOC4yNWE2MjAsNjIwLDAsMCwxLDY4LjM5LTNBNjcwLDY3MCwwLDAsMSw4NTQsMTQ5LjcxLDYxNSw2MTUsMCwwLDEsOTg0LjYsMTc5LjU5YTYyNy44Miw2MjcuODIsMCwwLDEsMzgyLDM3Mi44MSw2MTMuNTEsNjEzLjUxLDAsMCwxLDMwLjc0LDExNC40N2MyLjA5LDEyLjU4LDMuNDYsMjUuMjksNS4zNSwzNy45MS41LDMuMzItMSwzLjQ4LTMuNTgsMy40OFExMjkxLjQ2LDcwOC4xNywxMTgzLjg0LDcwOC4yMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTcuNzMgLTEwOS40MykiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zOTAuODMsODUwLjYycTExMy43NiwwLDIyNy41MS0uMDdjMi40MywwLDMuNjMuNjgsNC42NywyLjg1QTE4Ni4zNiwxODYuMzYsMCwwLDAsNzkyLjQ4LDk1Ny44N2MzOC40Ni0uOCw3My42MS0xMiwxMDUuMDktMzQuMzJBMTg0LjgzLDE4NC44MywwLDAsMCw5NTcuNDUsODUzYTMuNjEsMy42MSwwLDAsMSwzLjg3LTIuNDNxMjE3LjkuMDcsNDM1LjgzLDBjNCwwLDIuNjIsMS44LDIuMzYsNC0xLjU5LDEzLjQ1LTQsMjYuNzYtNi44LDQwYTYzMC43OCw2MzAuNzgsMCwwLDEtMjMuNTcsODMuMjYsNjIzLjA4LDYyMy4wOCwwLDAsMS04Ny45MywxNjMuNTMsNjE2LjUxLDYxNi41MSwwLDAsMS03Mi44NSw4MS40OSw2MjUuMyw2MjUuMywwLDAsMS0xNjUuNzIsMTEyLDYxNy4yNSw2MTcuMjUsMCwwLDEtMTIyLjEyLDQxLjgxYy0xNS42MiwzLjU3LTMxLjMyLDYuNy00Ny4xNSw5LjA3LTExLjkxLDEuNzgtMjMuOSwzLTM1LjksNC4yLTI0LjczLDIuNTItNDkuNTIsMi44Ny03NC4zMiwyLjQ4LTEzLjU0LS4yMS0yNy0xLjItNDAuNTUtMi40Mi0xMC43MS0xLTIxLjQxLTIuMDYtMzItMy41OEE2MjQsNjI0LDAsMCwxLDM4Ni44NiwxMjU0LDYyMy44NSw2MjMuODUsMCwwLDEsMzEzLDExODMuOTNjLTU2LjE0LTYzLjA4LTk4LjMtMTM0LjM4LTEyNS43MS0yMTQuMzFhNTk1LjQ1LDU5NS40NSwwLDAsMS0yMi04MmMtMi4xMi0xMS4xNS0zLjgtMjIuMzctNS44My0zMy41My0uNDgtMi41OS4xOS0zLjUsMy4xNC0zLjVRMjc2Ljc0LDg1MC42OSwzOTAuODMsODUwLjYyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNy43MyAtMTA5LjQzKSIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTc4OS44LDYyMC43OGM4NC4zOC4zOSwxNTEuNjYsNjguMDgsMTUxLjE3LDE1MS45MmExNTAuOTEsMTUwLjkxLDAsMCwxLTMwMS44MS0xLjE1QzYzOS4zMiw2ODcuMzIsNzA3LjE3LDYyMS4zNyw3ODkuOCw2MjAuNzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE3LjczIC0xMDkuNDMpIi8+PC9zdmc+CiAgICA="
+            width="75"
           />
         </div>
       </a>

@@ -2,8 +2,8 @@ import React from 'react';
 import { render, fireEvent, getByTestId } from '@testing-library/react';
 import Root, { renderBackground } from './Root';
 import { AppProvider, THEME_SELECTED } from '../../../contexts/AppContext';
-import { setter } from '../../../utlils/localStorageHelpers';
-import { NAMESPACES, COLORS } from '../../../utlils/constants';
+import { setter } from '../../../utils/localStorageHelpers';
+import { NAMESPACES, COLORS } from '../../../utils/constants';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Root Component', () => {
