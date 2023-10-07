@@ -7,6 +7,8 @@ import DetailLayout, {
   StyledList,
   StyledListItem,
   StyledImage,
+  Container,
+  StyledLink,
 } from './DetailLayout';
 import FavoriteLink from './FavoriteLink';
 
@@ -22,4 +24,6 @@ export {
   StyledTitle,
   StyledImage,
   FavoriteLink,
+  Container,
+  StyledLink,
 };

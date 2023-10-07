@@ -7,11 +7,17 @@ interface DetailLayoutProps {
   children: React.ReactNode;
 }
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 140px auto;
+`;
+
 const DetailLayoutWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 140px auto;
+  margin: 0 auto;
   padding: 3rem;
   border: 1px solid ${COLORS.medium_gray};
   border-radius: 0.5rem;
@@ -24,6 +30,18 @@ const DetailLayoutWrapper = styled.div`
 const DetailLayoutContent = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const StyledLink = styled.h1`
+  font-size: 1.25rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: ${BREAKPOINTS.small}) {
+    font-size: 1rem;
+  }
 `;
 
 export const StyledTitle = styled.h1`
